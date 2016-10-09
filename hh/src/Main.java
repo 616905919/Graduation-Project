@@ -303,12 +303,12 @@ public class Main {
             M.putAll(N);
         }
         float ans = 0;
-        Iterator it = M.entrySet().iterator();
+        Iterator<Map.Entry<state, Float>> it = M.entrySet().iterator();
 //        float allp = 0;
         while (it.hasNext()) {
-            Map.Entry e = (Map.Entry) it.next();
-            state s = (state) e.getKey();
-            Float p = (Float) e.getValue();
+            Map.Entry<state, Float> e = it.next();
+            state s = e.getKey();
+            Float p = e.getValue();
 //            allp += p.floatValue();
             if (s.t + zp == 0) ans += p;
             else ans += p * ((s.a + 0.0) / (s.t + zp));
