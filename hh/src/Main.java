@@ -1,3 +1,5 @@
+import com.sun.xml.internal.ws.util.StringUtils;
+
 import java.io.*;
 import java.util.*;
 
@@ -157,16 +159,21 @@ public class Main {
     public static final float Yita = 0.3f;
 
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
-        File f = new File("C:\\Users\\jiang_000\\Desktop\\1.txt");
-        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
-        Instances instances = ReadInstance(br);
-        //Model model = Train(instances, 10, 10000);
-        for (int i = 0; i < 2; i++) {
-            for (int j = 0; j < 10; j++) {
-                new TrainModel(instances, j, 10000).start();
-                //Model model = Train(instances, j, 10000);
-            }
+        float[] f = new float[]{0.9f,0.6f,0.51f,0.1f};
+        int[] ans = GetMaxExpF(f);
+        for(int  i :ans){
+            System.out.println(i);
         }
+//        File f = new File("C:\\Users\\jiang_000\\Desktop\\1.txt");
+//        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
+//        Instances instances = ReadInstance(br);
+//        //Model model = Train(instances, 10, 10000);
+//        for (int i = 0; i < 2; i++) {
+//            for (int j = 0; j < 10; j++) {
+//                new TrainModel(instances, j, 10000).start();
+//                //Model model = Train(instances, j, 10000);
+//            }
+//        }
     }
 
     /**
@@ -453,7 +460,7 @@ public class Main {
     private static int[] GetZk(float[] z, int k) {
         int[] ans = new int[z.length];
         if (k == 0) return ans;
-        Queue<Zk> q = new PriorityQueue<Zk>();
+        Queue<Zk> q = new PriorityQueue<>();
         int i = 0;
         for (; i < k; i++) {
             q.add(new Zk(z[i], i));
