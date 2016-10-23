@@ -159,11 +159,11 @@ public class Main {
     public static final float Yita = 0.3f;
 
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
-        float[] f = new float[]{0.9f,0.6f,0.51f,0.1f};
-        int[] ans = GetMaxExpF(f);
-        for(int  i :ans){
-            System.out.println(i);
-        }
+//        float[] f = new float[]{1f,0.6f,0.45f,0.3f};
+//        int[] ans = GetMaxExpF(f);
+//        for(int  i :ans){
+//            System.out.println(i);
+//        }
 //        File f = new File("C:\\Users\\jiang_000\\Desktop\\1.txt");
 //        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
 //        Instances instances = ReadInstance(br);
