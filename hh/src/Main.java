@@ -1,3 +1,4 @@
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import com.sun.xml.internal.ws.util.StringUtils;
 
 import java.io.*;
@@ -164,16 +165,26 @@ public class Main {
 //        for(int  i :ans){
 //            System.out.println(i);
 //        }
-//        File f = new File("C:\\Users\\jiang_000\\Desktop\\1.txt");
-//        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
-//        Instances instances = ReadInstance(br);
-//        //Model model = Train(instances, 10, 10000);
-//        for (int i = 0; i < 2; i++) {
-//            for (int j = 0; j < 10; j++) {
+        File f = new File("C:\\Users\\jiayao\\Desktop\\1.txt");
+        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
+        Instances instances = ReadInstance(br);
+        Model model = Train(instances, 10, 10000);
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 10; j++) {
 //                new TrainModel(instances, j, 10000).start();
-//                //Model model = Train(instances, j, 10000);
-//            }
-//        }
+//                Model model = Train(instances, j, 10000);
+            }
+        }
+    }
+
+    public static Model TrainFnn(Instances instances, int i, int IterationTimes) {
+        Model model = new Model(instances.ins.get(0).n, i, instances.n);
+        InitModel(model);
+        float[] z = ClassifyAll(model, instances, false);
+        while (IterationTimes-- > 0) {
+            int[] tmpz = GetMaxExpF(z);
+        }
+        return model;
     }
 
     /**
@@ -183,7 +194,7 @@ public class Main {
      * @return
      */
     public static Model Train(Instances instances, int i, int IterationTimes) throws CloneNotSupportedException {
-        int maxDonotUp = 15;
+        int maxDonotUp = 2;
         Model model = new Model(instances.ins.get(0).n, i, instances.n);
         //int batch = (int) Math.sqrt(instances.n);
         int batch = instances.n;
@@ -204,8 +215,8 @@ public class Main {
             }
             float yz = InnerProduct(y, z);
             float Now_f = 2 * yz / (InnerProduct(z, z) + InnerProduct(y, y));
-            //if (IterationTimes % 1 == 0)
-            //    System.out.println("int the" + (100000 - IterationTimes) + "times iteration , the approximate f is " + Now_f);
+            if (IterationTimes % 100 == 0)
+                System.out.println("int the" + (100000 - IterationTimes) + "times iteration , the approximate f is " + Now_f);
             float z2 = InnerProduct(z, z);
             float y2z2 = y2 + z2;
             Model LastModel = model.clone();
@@ -265,6 +276,7 @@ public class Main {
     }
 
     private static int[] GetMaxExpF(float[] z) {
+        long time = System.currentTimeMillis();
         int[] ans = null;
         float e = -1;
         for (int i = 0; i < z.length; i++) {
@@ -277,6 +289,7 @@ public class Main {
             }
         }
         System.out.println(e);
+        System.out.println("run  get max f in " + (System.currentTimeMillis() - time) + "ms");
         return ans;
     }
 
@@ -299,12 +312,16 @@ public class Main {
                 if (p == 0) continue;
                 state s0 = GetState(s, z2[i], 0);
                 state s1 = GetState(s, z2[i], 1);
-                if (N.containsKey(s0)) {
-                    N.put(s0, N.get(s0) + p * (1 - z[i]));
-                } else N.put(s0, p * (1 - z[i]));
-                if (N.containsKey(s1)) {
-                    N.put(s1, N.get(s1) + p * z[i]);
-                } else N.put(s1, p * z[i]);
+                if (z[i] < 0.9) {
+                    if (N.containsKey(s0)) {
+                        N.put(s0, N.get(s0) + p * (1 - z[i]));
+                    } else N.put(s0, p * (1 - z[i]));
+                }
+                if (z[i] > 0.1) {
+                    if (N.containsKey(s1)) {
+                        N.put(s1, N.get(s1) + p * z[i]);
+                    } else N.put(s1, p * z[i]);
+                }
             }
             M.clear();
             M.putAll(N);
