@@ -165,9 +165,10 @@ public class Main {
 //        for(int  i :ans){
 //            System.out.println(i);
 //        }
-        File f = new File("C:\\Users\\jiayao\\Desktop\\1.txt");
+        File f = new File("D:\\design(2)\\design\\data\\8、credit\\credit.txt");
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
         Instances instances = ReadInstance(br);
+//        Model fnnmo = TrainFnn(instances, 5, 1000);
         Model model = Train(instances, 10, 10000);
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 10; j++) {
@@ -178,11 +179,45 @@ public class Main {
     }
 
     public static Model TrainFnn(Instances instances, int i, int IterationTimes) {
+        float Now_f = 0;
         Model model = new Model(instances.ins.get(0).n, i, instances.n);
         InitModel(model);
-        float[] z = ClassifyAll(model, instances, false);
+        float[] z;
+        float[] y = new float[instances.n];
+        for (int j = 0; j < instances.n; j++) {
+            y[j] = instances.ins.get(j).y;
+        }
+        float y2 = InnerProduct(y, y);
         while (IterationTimes-- > 0) {
-            int[] tmpz = GetMaxExpF(z);
+            z = ClassifyAll(model, instances, true);
+            System.out.println(IterationTimes);
+            int[] tmpz = null;
+            if (IterationTimes < 50) {
+////                tmpz = GetMaxExpF(z);zz
+                Now_f = 2 * InnerProduct(z, y) / (y2 + InnerProduct(z, z));
+            }
+            if (IterationTimes % 1 == 0 && IterationTimes < 50)
+                System.out.println("int the" + (100000 - IterationTimes) + "times iteration , the approximate f is " + Now_f);
+            for (int j = 0; j < instances.n; j++) {
+//                if (IterationTimes < 50)
+//                    if (tmpz[j] == y[j]) continue;
+                Instance instance = instances.ins.get(j);
+                float[] tmp = model.OutputLayer;
+                float dt = z[j] * (1 - z[j]) * (y[j] - z[j]);
+                int k = 0;
+                int l;
+                for (; k < model.HiddenNodeNum; k++) {
+                    model.OutputLayer[k] += (Yita) * dt * model.OutputOfHiddenLayer[j][k];
+                    l = 0;
+                    float dtHidden = dt * tmp[k] * model.OutputOfHiddenLayer[j][k] * (1 - model.OutputOfHiddenLayer[j][k]);
+                    for (; l < instance.n; l++) {
+                        model.HiddenLayer[k][l] += Yita * dtHidden * instance.f[l];
+                    }
+                    model.HiddenLayer[k][l] += Yita * dtHidden;
+                }
+                model.OutputLayer[k] += Yita * dt;
+            }
+
         }
         return model;
     }
@@ -210,12 +245,9 @@ public class Main {
         while (IterationTimes-- > 0) {
             //Collections.shuffle(instances.ins);
             z = ClassifyAll(model, instances, false);
-            for (int j = 0; j < instances.n; j++) {
-                y[j] = instances.ins.get(j).y;
-            }
             float yz = InnerProduct(y, z);
             float Now_f = 2 * yz / (InnerProduct(z, z) + InnerProduct(y, y));
-            if (IterationTimes % 100 == 0)
+            if (IterationTimes % 1 == 0)
                 System.out.println("int the" + (100000 - IterationTimes) + "times iteration , the approximate f is " + Now_f);
             float z2 = InnerProduct(z, z);
             float y2z2 = y2 + z2;
@@ -226,11 +258,11 @@ public class Main {
             while (true) {
                 if (j + batchNow > instances.n) {
                     j = 0;
-                    batchNow = (int) (batchNow * 0.9);
+                    batchNow = (int) (batchNow * 0.5);
                     //System.out.println(batchNow);
                     if (batchNow == 0) {
                         //System.out.println(maxDonotUp);
-                        if (maxDonotUp-- <= 0)
+                        if (maxDonotUp-- <= instances.n * 0.001)
                             break all;
                         else break outer;
                     }
@@ -246,10 +278,11 @@ public class Main {
                     for (; k < model.HiddenNodeNum; k++) {
                         model.OutputLayer[k] += Yita * dt * model.OutputOfHiddenLayer[index][k];
                         l = 0;
+                        float dtHidden = dt * tmp[k] * model.OutputOfHiddenLayer[index][k] * (1 - model.OutputOfHiddenLayer[index][k]);
                         for (; l < instance.n; l++) {
-                            model.HiddenLayer[k][l] += Yita * dt * tmp[k] * model.OutputOfHiddenLayer[index][k] * (1 - model.OutputOfHiddenLayer[index][k]) * instance.f[l];
+                            model.HiddenLayer[k][l] += Yita * dtHidden * instance.f[l];
                         }
-                        model.HiddenLayer[k][l] += Yita * dt * model.OutputOfHiddenLayer[index][k] * (1 - model.OutputOfHiddenLayer[index][k]);
+                        model.HiddenLayer[k][l] += Yita * dtHidden;
                     }
                     model.OutputLayer[k] += Yita * dt;
                 }
@@ -261,17 +294,24 @@ public class Main {
             }
         }
         z = ClassifyAll(model, instances, true);
-        float[] ztmp = z;
-        for (int j = 0; j < ztmp.length; j++) {
-            if (ztmp[j] < 0.1) ztmp[j] = 0;
-            else if (ztmp[j] > 0.9) ztmp[j] = 1;
-        }
-        int[] z2 = GetMaxExpF(ztmp);
-        System.out.println("the number of hidden node is " + i + "\nthe f of max expectation algorithm is" + 2 * InnerProduct(z2, y) / (y2 + InnerProduct(z2)));
+//        float[] ztmp = z;
+//        for (int j = 0; j < ztmp.length; j++) {
+//            if (ztmp[j] < 0.1) ztmp[j] = 0;
+//            else if (ztmp[j] > 0.9) ztmp[j] = 1;
+//        }
+//        int[] z2 = GetMaxExpF(ztmp);
+//        System.out.println("the number of hidden node is " + i + "\nthe f of max expectation algorithm is" + 2 * InnerProduct(z2, y) / (y2 + InnerProduct(z2)));
+        int a = 0, b = 0, c = 0, d = 0;
         for (int j = 0; j < z.length; j++) {
             z[j] = z[j] >= 0.5 ? 1 : 0;
+            if (y[j] == 1 && z[j] == 1) d++;
+            else if (y[j] == 1 && z[j] == 0) c++;
+            else if (y[j] == 0 && z[j] == 0) a++;
+            else b++;
         }
         System.out.println("the number of hidden node is " + i + "\n the final f is " + 2 * InnerProduct(z, y) / (y2 + InnerProduct(z, z)));
+        System.out.println(a + '\t' + b);
+        System.out.println(c + '\t' + d);
         return model;
     }
 
@@ -288,7 +328,7 @@ public class Main {
                 ans = z2;
             }
         }
-        System.out.println(e);
+        System.out.println("e is " + e);
         System.out.println("run  get max f in " + (System.currentTimeMillis() - time) + "ms");
         return ans;
     }
@@ -300,6 +340,7 @@ public class Main {
      * @return is the expectation of f when k is zp and zk is z
      */
     private static float getExpf(int[] z2, float[] z, int zp) {
+        float[] ztmp = Arrays.copyOf(z, z.length);
         Map<state, Float> M = new HashMap<state, Float>();
         M.put(new state(0, 0), new Float(1));
         for (int i = 0; i < z.length; i++) {
@@ -312,16 +353,14 @@ public class Main {
                 if (p == 0) continue;
                 state s0 = GetState(s, z2[i], 0);
                 state s1 = GetState(s, z2[i], 1);
-                if (z[i] < 0.9) {
-                    if (N.containsKey(s0)) {
-                        N.put(s0, N.get(s0) + p * (1 - z[i]));
-                    } else N.put(s0, p * (1 - z[i]));
-                }
-                if (z[i] > 0.1) {
-                    if (N.containsKey(s1)) {
-                        N.put(s1, N.get(s1) + p * z[i]);
-                    } else N.put(s1, p * z[i]);
-                }
+                if (ztmp[i] >= 0.89) ztmp[i] = 1;
+                if (ztmp[i] <= 0.11) ztmp[i] = 0;
+                if (N.containsKey(s0)) {
+                    N.put(s0, N.get(s0) + p * (1 - ztmp[i]));
+                } else N.put(s0, p * (1 - ztmp[i]));
+                if (N.containsKey(s1)) {
+                    N.put(s1, N.get(s1) + p * ztmp[i]);
+                } else N.put(s1, p * ztmp[i]);
             }
             M.clear();
             M.putAll(N);
@@ -334,7 +373,7 @@ public class Main {
             state s = e.getKey();
             Float p = e.getValue();
 //            allp += p.floatValue();
-            if (s.t + zp == 0) ans += p;
+            if (s.t + zp == 0) ans += 0;
             else ans += p * ((s.a + 0.0) / (s.t + zp));
         }
         return ans;
@@ -423,10 +462,12 @@ public class Main {
         for (int i = 0; i < model.HiddenLayer.length; i++) {
             for (int j = 0; j < model.HiddenLayer[0].length; j++) {
                 model.HiddenLayer[i][j] = (r.nextFloat() * 0.1f - 0.05f);
+//                model.HiddenLayer[i][j] = (r.nextFloat() * 2f - 1f);
             }
         }
         for (int i = 0; i < model.HiddenLayer.length + 1; i++) {
             model.OutputLayer[i] = (r.nextFloat() * 0.1f - 0.05f);
+//            model.OutputLayer[i] = (r.nextFloat() * 2f - 1f);
         }
     }
 
