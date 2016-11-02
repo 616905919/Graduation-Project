@@ -165,7 +165,7 @@ public class Main {
 //        for(int  i :ans){
 //            System.out.println(i);
 //        }
-        File f = new File("D:\\design(2)\\design\\data\\8、credit\\credit.txt");
+        File f = new File("D:\\design(2)\\design\\data\\8、credit\\credit2.txt");
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
         Instances instances = ReadInstance(br);
 //        Model fnnmo = TrainFnn(instances, 5, 1000);
@@ -260,9 +260,9 @@ public class Main {
                     j = 0;
                     batchNow = (int) (batchNow * 0.5);
                     //System.out.println(batchNow);
-                    if (batchNow == 0) {
-                        //System.out.println(maxDonotUp);
-                        if (maxDonotUp-- <= instances.n * 0.001)
+                    if (batchNow <= instances.n * 0.001) {
+                        System.out.println(maxDonotUp);
+                        if (maxDonotUp-- <= 0)
                             break all;
                         else break outer;
                     }
@@ -310,8 +310,8 @@ public class Main {
             else b++;
         }
         System.out.println("the number of hidden node is " + i + "\n the final f is " + 2 * InnerProduct(z, y) / (y2 + InnerProduct(z, z)));
-        System.out.println(a + '\t' + b);
-        System.out.println(c + '\t' + d);
+        System.out.println(a + "\t" + b);
+        System.out.println(c + "\t" + d);
         return model;
     }
 

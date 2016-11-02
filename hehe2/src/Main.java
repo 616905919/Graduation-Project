@@ -21,8 +21,8 @@ public class Main {
             now = new String(",");
             after = new String(" ");
         }
-        Scanner s = new Scanner(new File("C:\\Users\\jiayao\\Desktop\\credit.txt"));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("C:\\Users\\jiayao\\Desktop\\credit.txt")));
+        Scanner s = new Scanner(new File("D:\\design(2)\\design\\data\\8、credit\\credit-sele.txt"));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("C:\\Users\\jiayao\\Desktop\\credit2.txt")));
         while (s.hasNext()) {
             String str = s.nextLine();
             String[] data = str.split(now);
