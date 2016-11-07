@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws IOException {
 //        txt2cvs(false);
-        String path = "D:\\design(2)\\design\\data\\3、glass\\glass.txt";
+        String path = "D:\\design(2)\\design\\data\\8、credit\\credit.txt";
         ann2svm(path);
     }
 
@@ -18,18 +18,24 @@ public class Main {
         Scanner s = new Scanner(new File(path));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path.substring(0, path.indexOf(".txt")) + "2svm.txt")));
         while (s.hasNext()) {
+            boolean thisLineOk = true;
             String currrent = s.nextLine();
             String[] data = currrent.split(" ");
             String out = "";
             if (data[data.length - 1].equals("0")) out += "-1 ";
             else out += "1 ";
             for (int i = 0; i < data.length - 1; ) {
+                if (data[i].equals("?")) {
+                    thisLineOk = false;
+                    break;
+                }
                 out += ++i;
                 out += ":";
                 out += data[i - 1];
                 out += " ";
             }
-            bw.write(out + "\n");
+            if (thisLineOk)
+                bw.write(out + "\n");
         }
         bw.flush();
         bw.close();

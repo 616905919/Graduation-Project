@@ -157,16 +157,18 @@ class Zk implements Comparable<Zk> {
 
 public class Main {
     public static final float Yita = 0.1f;
+    public static long now = 0;
 
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
-        File f = new File("D:\\design(2)\\design\\data\\5、verhicle\\vehicle_ok.txt");
+//        File f = new File("D:\\design(2)\\design\\data\\6、haberman\\haberman_ok.txt");
+        File f = new File("D:\\design(2)\\design\\data\\1、yeast\\yeast.txt");
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
         Instances instances = ReadInstance(br);
         Collections.shuffle(instances.ins);
         pretreatData(instances);
-        long now = System.currentTimeMillis();
-//        Model fnnmo = TrainFnn(instances, 5, 1000);
-        Model model = Train(instances, 6, 100000);
+        now = System.currentTimeMillis();
+        Model fnnmo = TrainFnn(instances, 7, 10000);
+//        Model model = Train(instances, 6, 100000);
         for (int i = 0; i < 1; i++) {
             for (int j = 0; j < 10; j++) {
 //                new TrainModel(instances, j, 10000).start();
@@ -197,10 +199,13 @@ public class Main {
         }
     }
 
-    public static Model TrainFnn(Instances instances, int i, int IterationTimes) {
+    public static Model TrainFnn(Instances instances, int i, int IterationTimes) throws CloneNotSupportedException {
+        double Yita = Main.Yita / Math.sqrt(instances.n);
         int timenow = 1;
+        double maxF = Double.NEGATIVE_INFINITY;
         float Now_f = 0;
         Model model = new Model(instances.ins.get(0).n, i, instances.n);
+        Model lastModel = model.clone();
         InitModel(model);
         float[] z;
         float[] y = new float[instances.n];
@@ -210,17 +215,19 @@ public class Main {
         float y2 = InnerProduct(y, y);
         while (timenow++ < IterationTimes) {
             z = ClassifyAll(model, instances, true);
-            System.out.println(IterationTimes);
             int[] tmpz = null;
-            if (IterationTimes < 50) {
-////                tmpz = GetMaxExpF(z);zz
-                Now_f = 2 * InnerProduct(z, y) / (y2 + InnerProduct(z, z));
+            Now_f = 2 * InnerProduct(z, y) / (y2 + InnerProduct(z, z));
+            if (Now_f > maxF) {
+                lastModel = model.clone();
             }
-            if (IterationTimes % 1 == 0 && IterationTimes < 50)
-                System.out.println("in the" + (100000 - IterationTimes) + "times iteration , the approximate f is " + Now_f);
+            if (IterationTimes - timenow < 10) {
+                tmpz = GetMaxExpF(z);
+            }
+            if (timenow % 100 == 0 || IterationTimes - timenow < 10)
+                System.out.println("in the" + timenow + "times iteration , the approximate f is " + Now_f);
             for (int j = 0; j < instances.n; j++) {
-//                if (IterationTimes < 50)
-//                    if (tmpz[j] == y[j]) continue;
+                if (IterationTimes - timenow < 10)
+                    if (tmpz[j] == y[j]) continue;
                 Instance instance = instances.ins.get(j);
                 float[] tmp = model.OutputLayer;
                 float dt = z[j] * (1 - z[j]) * (y[j] - z[j]);
@@ -237,8 +244,19 @@ public class Main {
                 }
                 model.OutputLayer[k] += Yita * dt;
             }
-
         }
+        z = ClassifyAll(model, instances, true);
+        int zn[] = GetMaxExpF(z);
+        int a = 0, b = 0, c = 0, d = 0;
+        for (int j = 0; j < zn.length; j++) {
+            if (y[j] == 1 && zn[j] == 1) d++;
+            else if (y[j] == 1 && zn[j] == 0) c++;
+            else if (y[j] == 0 && zn[j] == 0) a++;
+            else b++;
+        }
+        System.out.println("the number of hidden node is " + i + "\n the final f is " + 2 * InnerProduct(z, y) / (y2 + InnerProduct(z, z)));
+        System.out.println(a + "\t" + b);
+        System.out.println(c + "\t" + d);
         return model;
     }
 
@@ -248,6 +266,7 @@ public class Main {
      * @param IterationTimes the max times of iterations
      * @return
      */
+
     public static Model Train(Instances instances, int i, int IterationTimes) throws CloneNotSupportedException {
         int timeNow = 1;
         double fLast = 0;
@@ -265,15 +284,20 @@ public class Main {
         z = ClassifyAll(model, instances, false);
         all:
         while (timeNow++ < IterationTimes) {
+            if (System.currentTimeMillis() - now > 300000) break all;
             //Collections.shuffle(instances.ins);
             double Yita = Math.sqrt(Main.Yita * timeNow);
             z = ClassifyAll(model, instances, false);
             float yz = InnerProduct(y, z);
             float Now_f = 2 * yz / (InnerProduct(z, z) + InnerProduct(y, y));
-            if (timeNow % 1000 == 0) {
-                if (Now_f - fLast < 0.001) break all;
-                System.out.println("in the" + timeNow + "times iteration , the approximate f is " + Now_f);
-                fLast = Now_f;
+            if (timeNow % 1 == 0) {
+                if (timeNow % 500 == 0) {
+                    if (Now_f - fLast < 0.001)
+                        break all;
+                    fLast = Now_f;
+                }
+                if (timeNow % 20 == 0)
+                    System.out.println("in the" + timeNow + "times iteration , the approximate f is " + Now_f);
             }
             float z2 = InnerProduct(z, z);
             float y2z2 = y2 + z2;
@@ -354,8 +378,8 @@ public class Main {
                 ans = z2;
             }
         }
-        System.out.println("e is " + e);
-        System.out.println("run  get max f in " + (System.currentTimeMillis() - time) + "ms");
+//        System.out.println("e is " + e);
+//        System.out.println("run  get max f in " + (System.currentTimeMillis() - time) + "ms");
         return ans;
     }
 
