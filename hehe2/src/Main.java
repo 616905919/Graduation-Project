@@ -9,8 +9,32 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) throws IOException {
-        txt2cvs(false);
+//        txt2cvs(false);
+        String path = "D:\\design(2)\\design\\data\\3、glass\\glass.txt";
+        ann2svm(path);
     }
+
+    private static void ann2svm(String path) throws IOException {
+        Scanner s = new Scanner(new File(path));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path.substring(0, path.indexOf(".txt")) + "2svm.txt")));
+        while (s.hasNext()) {
+            String currrent = s.nextLine();
+            String[] data = currrent.split(" ");
+            String out = "";
+            if (data[data.length - 1].equals("0")) out += "-1 ";
+            else out += "1 ";
+            for (int i = 0; i < data.length - 1; ) {
+                out += ++i;
+                out += ":";
+                out += data[i - 1];
+                out += " ";
+            }
+            bw.write(out + "\n");
+        }
+        bw.flush();
+        bw.close();
+    }
+
 
     private static void txt2cvs(boolean ok) throws IOException {
         String now, after;
@@ -21,8 +45,9 @@ public class Main {
             now = new String(",");
             after = new String(" ");
         }
-        Scanner s = new Scanner(new File("D:\\design(2)\\design\\data\\8、credit\\credit-sele.txt"));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream("C:\\Users\\jiayao\\Desktop\\credit2.txt")));
+        String path = "D:\\design(2)\\design\\data\\7、ecoli\\ecoli.txt";
+        Scanner s = new Scanner(new File(path));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path.substring(0, path.indexOf(".txt")) + "_ok.txt")));
         while (s.hasNext()) {
             String str = s.nextLine();
             String[] data = str.split(now);
@@ -31,11 +56,12 @@ public class Main {
         bw.flush();
         bw.close();
     }
-    private static String join(String[] data , String add){
+
+    private static String join(String[] data, String add) {
         StringBuffer ans = new StringBuffer();
         int i = 0;
-        for (;i<data.length-1;i++){
-            if(data[i].length()==0) continue;
+        for (; i < data.length - 1; i++) {
+            if (data[i].length() == 0) continue;
             ans.append(data[i]).append(add);
         }
         ans.append(data[i]);

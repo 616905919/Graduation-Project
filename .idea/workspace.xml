@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="008cecff-7612-430f-894a-d71604ee2a60" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Graduation-Project.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/java.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/weka/src/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/word2_now.doc" afterPath="$PROJECT_DIR$/word2_now.doc" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hehe2/src/Main.java" afterPath="$PROJECT_DIR$/hehe2/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hh/src/Main.java" afterPath="$PROJECT_DIR$/hh/src/Main.java" />
@@ -31,8 +35,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hh/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-270">
-              <caret line="167" column="73" selection-start-line="167" selection-start-column="73" selection-end-line="167" selection-end-column="73" />
+            <state relative-caret-position="71">
+              <caret line="161" column="82" selection-start-line="161" selection-start-column="82" selection-end-line="161" selection-end-column="82" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -43,79 +47,28 @@
       <file leaf-file-name="Scanner.java" pinned="false" current-in-tab="false">
         <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/util/Scanner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="42978">
+            <state relative-caret-position="120">
               <caret line="2344" column="0" selection-start-line="2344" selection-start-column="0" selection-end-line="2344" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileInputStream.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/io/FileInputStream.java">
+      <file leaf-file-name="Double.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/lang/Double.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2147">
-              <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+            <state relative-caret-position="166">
+              <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HashMap.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/util/HashMap.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9044">
-              <caret line="513" column="0" selection-start-line="513" selection-start-column="0" selection-end-line="513" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#90987#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#12815#12816#0" expanded="false" />
-                <element signature="e#12893#12894#0" expanded="false" />
-                <element signature="e#19072#19073#0" expanded="false" />
-                <element signature="e#19130#19131#0" expanded="false" />
-                <element signature="e#19296#19297#0" expanded="false" />
-                <element signature="e#19379#19380#0" expanded="false" />
-                <element signature="e#21076#21077#0" expanded="false" />
-                <element signature="e#21103#21104#0" expanded="false" />
-                <element signature="e#21303#21304#0" expanded="false" />
-                <element signature="e#21335#21336#0" expanded="false" />
-                <element signature="e#23597#23598#0" expanded="false" />
-                <element signature="e#23651#23652#0" expanded="false" />
-                <element signature="e#31026#31027#0" expanded="false" />
-                <element signature="e#31064#31065#0" expanded="false" />
-                <element signature="e#36105#36106#0" expanded="false" />
-                <element signature="e#36189#36190#0" expanded="false" />
-                <element signature="e#36241#36242#0" expanded="false" />
-                <element signature="e#36319#36320#0" expanded="false" />
-                <element signature="e#38263#38264#0" expanded="false" />
-                <element signature="e#38343#38344#0" expanded="false" />
-                <element signature="e#40223#40224#0" expanded="false" />
-                <element signature="e#40273#40274#0" expanded="false" />
-                <element signature="e#41993#41994#0" expanded="false" />
-                <element signature="e#42057#42058#0" expanded="false" />
-                <element signature="e#42126#42127#0" expanded="false" />
-                <element signature="e#42202#42203#0" expanded="false" />
-                <element signature="e#54965#54966#0" expanded="false" />
-                <element signature="e#55008#55009#0" expanded="false" />
-                <element signature="e#63047#63048#0" expanded="false" />
-                <element signature="e#63132#63133#0" expanded="false" />
-                <element signature="e#66429#66430#0" expanded="false" />
-                <element signature="e#66486#66487#0" expanded="false" />
-                <element signature="e#66600#66601#0" expanded="false" />
-                <element signature="e#66663#66664#0" expanded="false" />
-                <element signature="e#68529#68530#0" expanded="false" />
-                <element signature="e#68580#68581#0" expanded="false" />
-                <element signature="e#71152#71153#0" expanded="false" />
-                <element signature="e#71234#71235#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hehe2/src/Main.java">
+        <entry file="file://$PROJECT_DIR$/weka/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+            <state relative-caret-position="181">
+              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -123,136 +76,57 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="AbstractClassifier.java" pinned="false" current-in-tab="false">
+        <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/AbstractClassifier.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="123">
+              <caret line="170" column="16" selection-start-line="170" selection-start-column="16" selection-end-line="170" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MultilayerPerceptron.java" pinned="false" current-in-tab="false">
         <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/MultilayerPerceptron.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27778">
-              <caret line="1590" column="31" selection-start-line="1590" selection-start-column="31" selection-end-line="1590" selection-end-column="31" />
+            <state relative-caret-position="332">
+              <caret line="1953" column="28" selection-start-line="1953" selection-start-column="28" selection-end-line="1953" selection-end-column="28" />
               <folding>
-                <element signature="e#0#85725#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#5402#5403#0" expanded="false" />
-                <element signature="e#5459#5460#0" expanded="false" />
-                <element signature="e#13200#13201#0" expanded="false" />
-                <element signature="e#13227#13228#0" expanded="false" />
-                <element signature="e#13364#13365#0" expanded="false" />
-                <element signature="e#13428#13429#0" expanded="false" />
-                <element signature="e#13813#17562#0" expanded="false" />
-                <element signature="e#14351#14369#0" expanded="false" />
-                <element signature="e#16240#16258#0" expanded="false" />
-                <element signature="e#17561#17562#0" expanded="false" />
-                <element signature="e#21369#21370#0" expanded="false" />
-                <element signature="e#21433#21434#0" expanded="false" />
-                <element signature="e#23086#23454#0" expanded="false" />
-                <element signature="e#23453#23454#0" expanded="false" />
-                <element signature="e#23626#24242#0" expanded="false" />
-                <element signature="e#24241#24242#0" expanded="false" />
-                <element signature="e#26254#27252#0" expanded="false" />
-                <element signature="e#27251#27252#0" expanded="false" />
-                <element signature="e#27295#27461#0" expanded="false" />
-                <element signature="e#27460#27461#0" expanded="false" />
-                <element signature="e#27504#27779#0" expanded="false" />
-                <element signature="e#27778#27779#0" expanded="false" />
-                <element signature="e#27923#27924#0" expanded="false" />
-                <element signature="e#27987#27988#0" expanded="false" />
-                <element signature="e#33809#33810#0" expanded="false" />
-                <element signature="e#33830#33831#0" expanded="false" />
-                <element signature="e#33931#33932#0" expanded="false" />
-                <element signature="e#33955#33956#0" expanded="false" />
-                <element signature="e#34756#34757#0" expanded="false" />
-                <element signature="e#34780#34781#0" expanded="false" />
-                <element signature="e#35032#35033#0" expanded="false" />
-                <element signature="e#35062#35063#0" expanded="false" />
-                <element signature="e#35176#35177#0" expanded="false" />
-                <element signature="e#35209#35210#0" expanded="false" />
-                <element signature="e#35424#35425#0" expanded="false" />
-                <element signature="e#35459#35460#0" expanded="false" />
-                <element signature="e#35566#35567#0" expanded="false" />
-                <element signature="e#35604#35605#0" expanded="false" />
-                <element signature="e#35744#35745#0" expanded="false" />
-                <element signature="e#35771#35772#0" expanded="false" />
-                <element signature="e#35886#35887#0" expanded="false" />
-                <element signature="e#35916#35917#0" expanded="false" />
-                <element signature="e#36270#36271#0" expanded="false" />
-                <element signature="e#36299#36300#0" expanded="false" />
-                <element signature="e#36781#36782#0" expanded="false" />
-                <element signature="e#36814#36815#0" expanded="false" />
-                <element signature="e#37359#37360#0" expanded="false" />
-                <element signature="e#37390#37391#0" expanded="false" />
-                <element signature="e#38312#38313#0" expanded="false" />
-                <element signature="e#38340#38341#0" expanded="false" />
-                <element signature="e#39946#39947#0" expanded="false" />
-                <element signature="e#39977#39978#0" expanded="false" />
-                <element signature="e#40386#40387#0" expanded="false" />
-                <element signature="e#40408#40409#0" expanded="false" />
-                <element signature="e#40775#40776#0" expanded="false" />
-                <element signature="e#40801#40802#0" expanded="false" />
-                <element signature="e#41135#41136#0" expanded="false" />
-                <element signature="e#41163#41164#0" expanded="false" />
-                <element signature="e#65058#65066#0" expanded="false" />
-                <element signature="e#73597#73605#0" expanded="false" />
-                <element signature="e#77713#77714#0" expanded="false" />
-                <element signature="e#77772#77773#0" expanded="false" />
-                <element signature="e#77876#77877#0" expanded="false" />
-                <element signature="e#77943#77944#0" expanded="false" />
-                <element signature="e#78049#78050#0" expanded="false" />
-                <element signature="e#78118#78119#0" expanded="false" />
-                <element signature="e#85661#85662#0" expanded="false" />
-                <element signature="e#85721#85722#0" expanded="false" />
+                <element signature="e#35744#35745#0" expanded="true" />
+                <element signature="e#35771#35772#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Instance.java" pinned="false" current-in-tab="false">
-        <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/core/Instance.java">
+      <file leaf-file-name="DenseInstance.java" pinned="false" current-in-tab="false">
+        <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/core/DenseInstance.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1805">
-              <caret line="114" column="17" selection-start-line="114" selection-start-column="17" selection-end-line="114" selection-end-column="17" />
+            <state relative-caret-position="117">
+              <caret line="207" column="0" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/hehe2/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
               <folding>
-                <element signature="e#0#22236#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NeuralConnection.java" pinned="false" current-in-tab="false">
-        <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/neural/NeuralConnection.java">
+      <file leaf-file-name="NominalToBinary.java" pinned="false" current-in-tab="false">
+        <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/filters/unsupervised/attribute/NominalToBinary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3705">
-              <caret line="225" column="11" selection-start-line="225" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#19966#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#3920#3921#0" expanded="false" />
-                <element signature="e#3941#3942#0" expanded="false" />
-                <element signature="e#4015#4016#0" expanded="false" />
-                <element signature="e#4038#4039#0" expanded="false" />
-                <element signature="e#4123#4124#0" expanded="false" />
-                <element signature="e#4143#4144#0" expanded="false" />
-                <element signature="e#5782#5783#0" expanded="false" />
-                <element signature="e#5800#5801#0" expanded="false" />
-                <element signature="e#6764#6765#0" expanded="false" />
-                <element signature="e#6792#6793#0" expanded="false" />
-                <element signature="e#7051#7052#0" expanded="false" />
-                <element signature="e#7080#7081#0" expanded="false" />
-                <element signature="e#7337#7338#0" expanded="false" />
-                <element signature="e#7365#7366#0" expanded="false" />
-                <element signature="e#7621#7622#0" expanded="false" />
-                <element signature="e#7650#7651#0" expanded="false" />
-                <element signature="e#7714#7715#0" expanded="false" />
-                <element signature="e#7734#7735#0" expanded="false" />
-                <element signature="e#7800#7801#0" expanded="false" />
-                <element signature="e#7820#7821#0" expanded="false" />
-                <element signature="e#7910#7911#0" expanded="false" />
-                <element signature="e#7927#7928#0" expanded="false" />
-                <element signature="e#8017#8018#0" expanded="false" />
-                <element signature="e#8034#8035#0" expanded="false" />
-                <element signature="e#17052#17053#0" expanded="false" />
-                <element signature="e#17080#17081#0" expanded="false" />
-                <element signature="e#17171#17172#0" expanded="false" />
-                <element signature="e#17200#17201#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="109">
+              <caret line="519" column="0" selection-start-line="519" selection-start-column="0" selection-end-line="519" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -260,70 +134,11 @@
       <file leaf-file-name="Instances.java" pinned="false" current-in-tab="false">
         <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/core/Instances.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13756">
-              <caret line="765" column="38" selection-start-line="765" selection-start-column="38" selection-end-line="765" selection-end-column="38" />
+            <state relative-caret-position="117">
+              <caret line="900" column="0" selection-start-line="900" selection-start-column="0" selection-end-line="900" selection-end-column="0" />
               <folding>
-                <element signature="e#0#84643#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#6439#6440#0" expanded="false" />
-                <element signature="e#6478#6479#0" expanded="false" />
-                <element signature="e#8654#8662#0" expanded="false" />
-                <element signature="e#9970#9981#0" expanded="false" />
-                <element signature="e#13405#13406#0" expanded="false" />
-                <element signature="e#13461#13462#0" expanded="false" />
-                <element signature="e#16540#16551#0" expanded="false" />
-                <element signature="e#16627#16644#0" expanded="false" />
-                <element signature="e#18366#18367#0" expanded="false" />
-                <element signature="e#18413#18414#0" expanded="false" />
-                <element signature="e#18758#18768#0" expanded="false" />
-                <element signature="e#21414#21415#0" expanded="false" />
-                <element signature="e#21465#21466#0" expanded="false" />
-                <element signature="e#23379#23390#0" expanded="false" />
-                <element signature="e#23466#23483#0" expanded="false" />
-                <element signature="e#29367#29375#0" expanded="false" />
-                <element signature="e#33190#33201#0" expanded="false" />
-                <element signature="e#33273#33290#0" expanded="false" />
-                <element signature="e#35194#35205#0" expanded="false" />
-                <element signature="e#35273#35290#0" expanded="false" />
-                <element signature="e#36328#36339#0" expanded="false" />
-                <element signature="e#61378#61395#0" expanded="false" />
-                <element signature="e#68553#68563#0" expanded="false" />
-                <element signature="e#70059#70070#0" expanded="false" />
-                <element signature="e#84579#84580#0" expanded="false" />
-                <element signature="e#84639#84640#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Random.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/util/Random.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1881">
-              <caret line="134" column="11" selection-start-line="134" selection-start-column="11" selection-end-line="134" selection-end-column="11" />
-              <folding>
-                <element signature="e#0#48091#0" expanded="false" />
-                <element signature="imports" expanded="false" />
-                <element signature="e#3504#3505#0" expanded="false" />
-                <element signature="e#3562#3563#0" expanded="false" />
-                <element signature="e#4879#4880#0" expanded="false" />
-                <element signature="e#4928#4929#0" expanded="false" />
-                <element signature="e#11985#11986#0" expanded="false" />
-                <element signature="e#12016#12017#0" expanded="false" />
-                <element signature="e#17088#17089#0" expanded="false" />
-                <element signature="e#17123#17124#0" expanded="false" />
-                <element signature="e#19076#19077#0" expanded="false" />
-                <element signature="e#19128#19129#0" expanded="false" />
-                <element signature="e#21068#21069#0" expanded="false" />
-                <element signature="e#21142#21143#0" expanded="false" />
-                <element signature="e#40955#40956#0" expanded="false" />
-                <element signature="e#40999#41000#0" expanded="false" />
-                <element signature="e#42775#42776#0" expanded="false" />
-                <element signature="e#42819#42820#0" expanded="false" />
-                <element signature="e#44623#44624#0" expanded="false" />
-                <element signature="e#44667#44668#0" expanded="false" />
-                <element signature="e#48004#48005#0" expanded="false" />
-                <element signature="e#48087#48088#0" expanded="false" />
+                <element signature="e#6439#6440#0" expanded="true" />
+                <element signature="e#6478#6479#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -351,6 +166,8 @@
       <list>
         <option value="$PROJECT_DIR$/hh2/hh2.iml" />
         <option value="E:/Weka-3-8/weka.jar!/weka/classifiers/functions/MultilayerPerceptron.class" />
+        <option value="$PROJECT_DIR$/weka/src/Maiin.java" />
+        <option value="$PROJECT_DIR$/weka/src/Main.java" />
         <option value="$PROJECT_DIR$/hehe2/src/Main.java" />
         <option value="$PROJECT_DIR$/hh/src/Main.java" />
       </list>
@@ -363,10 +180,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="width" value="1378" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -400,17 +216,11 @@
               <option name="myItemId" value="Graduation-Project" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="weka" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="weka.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="Graduation-Project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="weka" />
@@ -423,88 +233,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="weka" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="weka.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="weka" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="classifiers" />
+              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Graduation-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="weka" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="weka.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="weka" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="classifiers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="functions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Graduation-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="weka" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="weka.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Graduation-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Graduation-Project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -589,6 +323,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <PATH>
@@ -599,7 +334,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="PackagesPane">
         <subPane />
       </pane>
@@ -641,6 +375,21 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="hehe2" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="weka" />
       <envs />
       <method />
     </configuration>
@@ -986,14 +735,16 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
       <item index="1" class="java.lang.String" itemvalue="Application.Main (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Main (2)" />
     </list>
     <recent_temporary>
-      <list size="2">
+      <list size="3">
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
         <item index="1" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -1013,11 +764,12 @@
       <workItem from="1477985668832" duration="255000" />
       <workItem from="1477985931020" duration="16621000" />
       <workItem from="1478079956997" duration="2900000" />
+      <workItem from="1478463317785" duration="26709000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19776000" />
+    <option name="totallyTimeSpent" value="46485000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1029,33 +781,33 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
-    <editor active="false" />
+    <frame x="-7" y="0" width="1378" height="735" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31751227" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30730897" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25718608" sideWeight="0.4869281" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26100153" sideWeight="0.4869281" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962063" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25340393" sideWeight="0.5130719" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.400982" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41694352" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1074,12 +826,102 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/hh/src/Main.java</url>
-          <line>304</line>
+          <line>241</line>
           <properties />
-          <option name="timeStamp" value="17" />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/filters/unsupervised/attribute/NominalToBinary.java</url>
+          <line>524</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/MultilayerPerceptron.java</url>
+          <line>1811</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/MultilayerPerceptron.java</url>
+          <line>1836</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/MultilayerPerceptron.java</url>
+          <line>1842</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/MultilayerPerceptron.java</url>
+          <line>1890</line>
+          <properties />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/MultilayerPerceptron.java</url>
+          <line>1899</line>
+          <properties />
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/MultilayerPerceptron.java</url>
+          <line>1902</line>
+          <properties />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/MultilayerPerceptron.java</url>
+          <line>1933</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/MultilayerPerceptron.java</url>
+          <line>1940</line>
+          <properties />
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/MultilayerPerceptron.java</url>
+          <line>2109</line>
+          <properties />
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/MultilayerPerceptron.java</url>
+          <line>2074</line>
+          <properties />
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/MultilayerPerceptron.java</url>
+          <line>1819</line>
+          <properties />
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/MultilayerPerceptron.java</url>
+          <line>1481</line>
+          <properties />
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/weka/src/Main.java</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/MultilayerPerceptron.java</url>
+          <line>1942</line>
+          <properties />
+          <option name="timeStamp" value="49" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="18" />
+      <option name="time" value="50" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -1138,6 +980,8 @@
             <element signature="e#21335#21336#0" expanded="false" />
             <element signature="e#23597#23598#0" expanded="false" />
             <element signature="e#23651#23652#0" expanded="false" />
+            <element signature="e#24298#24299#0" expanded="false" />
+            <element signature="e#24363#24364#0" expanded="false" />
             <element signature="e#31026#31027#0" expanded="false" />
             <element signature="e#31064#31065#0" expanded="false" />
             <element signature="e#36105#36106#0" expanded="false" />
@@ -1183,76 +1027,8 @@
         <state relative-caret-position="27778">
           <caret line="1590" column="31" selection-start-line="1590" selection-start-column="31" selection-end-line="1590" selection-end-column="31" />
           <folding>
-            <element signature="e#0#85725#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#5402#5403#0" expanded="false" />
-            <element signature="e#5459#5460#0" expanded="false" />
-            <element signature="e#13200#13201#0" expanded="false" />
-            <element signature="e#13227#13228#0" expanded="false" />
-            <element signature="e#13364#13365#0" expanded="false" />
-            <element signature="e#13428#13429#0" expanded="false" />
-            <element signature="e#13813#17562#0" expanded="false" />
-            <element signature="e#14351#14369#0" expanded="false" />
-            <element signature="e#16240#16258#0" expanded="false" />
-            <element signature="e#17561#17562#0" expanded="false" />
-            <element signature="e#21369#21370#0" expanded="false" />
-            <element signature="e#21433#21434#0" expanded="false" />
-            <element signature="e#23086#23454#0" expanded="false" />
-            <element signature="e#23453#23454#0" expanded="false" />
-            <element signature="e#23626#24242#0" expanded="false" />
-            <element signature="e#24241#24242#0" expanded="false" />
-            <element signature="e#26254#27252#0" expanded="false" />
-            <element signature="e#27251#27252#0" expanded="false" />
-            <element signature="e#27295#27461#0" expanded="false" />
-            <element signature="e#27460#27461#0" expanded="false" />
-            <element signature="e#27504#27779#0" expanded="false" />
-            <element signature="e#27778#27779#0" expanded="false" />
-            <element signature="e#27923#27924#0" expanded="false" />
-            <element signature="e#27987#27988#0" expanded="false" />
-            <element signature="e#33809#33810#0" expanded="false" />
-            <element signature="e#33830#33831#0" expanded="false" />
-            <element signature="e#33931#33932#0" expanded="false" />
-            <element signature="e#33955#33956#0" expanded="false" />
-            <element signature="e#34756#34757#0" expanded="false" />
-            <element signature="e#34780#34781#0" expanded="false" />
-            <element signature="e#35032#35033#0" expanded="false" />
-            <element signature="e#35062#35063#0" expanded="false" />
-            <element signature="e#35176#35177#0" expanded="false" />
-            <element signature="e#35209#35210#0" expanded="false" />
-            <element signature="e#35424#35425#0" expanded="false" />
-            <element signature="e#35459#35460#0" expanded="false" />
-            <element signature="e#35566#35567#0" expanded="false" />
-            <element signature="e#35604#35605#0" expanded="false" />
-            <element signature="e#35744#35745#0" expanded="false" />
-            <element signature="e#35771#35772#0" expanded="false" />
-            <element signature="e#35886#35887#0" expanded="false" />
-            <element signature="e#35916#35917#0" expanded="false" />
-            <element signature="e#36270#36271#0" expanded="false" />
-            <element signature="e#36299#36300#0" expanded="false" />
-            <element signature="e#36781#36782#0" expanded="false" />
-            <element signature="e#36814#36815#0" expanded="false" />
-            <element signature="e#37359#37360#0" expanded="false" />
-            <element signature="e#37390#37391#0" expanded="false" />
-            <element signature="e#38312#38313#0" expanded="false" />
-            <element signature="e#38340#38341#0" expanded="false" />
-            <element signature="e#39946#39947#0" expanded="false" />
-            <element signature="e#39977#39978#0" expanded="false" />
-            <element signature="e#40386#40387#0" expanded="false" />
-            <element signature="e#40408#40409#0" expanded="false" />
-            <element signature="e#40775#40776#0" expanded="false" />
-            <element signature="e#40801#40802#0" expanded="false" />
-            <element signature="e#41135#41136#0" expanded="false" />
-            <element signature="e#41163#41164#0" expanded="false" />
-            <element signature="e#65058#65066#0" expanded="false" />
-            <element signature="e#73597#73605#0" expanded="false" />
-            <element signature="e#77713#77714#0" expanded="false" />
-            <element signature="e#77772#77773#0" expanded="false" />
-            <element signature="e#77876#77877#0" expanded="false" />
-            <element signature="e#77943#77944#0" expanded="false" />
-            <element signature="e#78049#78050#0" expanded="false" />
-            <element signature="e#78118#78119#0" expanded="false" />
-            <element signature="e#85661#85662#0" expanded="false" />
-            <element signature="e#85721#85722#0" expanded="false" />
+            <element signature="e#35744#35745#0" expanded="true" />
+            <element signature="e#35771#35772#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1261,9 +1037,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1805">
           <caret line="114" column="17" selection-start-line="114" selection-start-column="17" selection-end-line="114" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#22236#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1311,34 +1085,8 @@
         <state relative-caret-position="13756">
           <caret line="765" column="38" selection-start-line="765" selection-start-column="38" selection-end-line="765" selection-end-column="38" />
           <folding>
-            <element signature="e#0#84643#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#6439#6440#0" expanded="false" />
-            <element signature="e#6478#6479#0" expanded="false" />
-            <element signature="e#8654#8662#0" expanded="false" />
-            <element signature="e#9970#9981#0" expanded="false" />
-            <element signature="e#13405#13406#0" expanded="false" />
-            <element signature="e#13461#13462#0" expanded="false" />
-            <element signature="e#16540#16551#0" expanded="false" />
-            <element signature="e#16627#16644#0" expanded="false" />
-            <element signature="e#18366#18367#0" expanded="false" />
-            <element signature="e#18413#18414#0" expanded="false" />
-            <element signature="e#18758#18768#0" expanded="false" />
-            <element signature="e#21414#21415#0" expanded="false" />
-            <element signature="e#21465#21466#0" expanded="false" />
-            <element signature="e#23379#23390#0" expanded="false" />
-            <element signature="e#23466#23483#0" expanded="false" />
-            <element signature="e#29367#29375#0" expanded="false" />
-            <element signature="e#33190#33201#0" expanded="false" />
-            <element signature="e#33273#33290#0" expanded="false" />
-            <element signature="e#35194#35205#0" expanded="false" />
-            <element signature="e#35273#35290#0" expanded="false" />
-            <element signature="e#36328#36339#0" expanded="false" />
-            <element signature="e#61378#61395#0" expanded="false" />
-            <element signature="e#68553#68563#0" expanded="false" />
-            <element signature="e#70059#70070#0" expanded="false" />
-            <element signature="e#84579#84580#0" expanded="false" />
-            <element signature="e#84639#84640#0" expanded="false" />
+            <element signature="e#6439#6440#0" expanded="true" />
+            <element signature="e#6478#6479#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1441,41 +1189,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/util/Random.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1881">
-          <caret line="134" column="11" selection-start-line="134" selection-start-column="11" selection-end-line="134" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#48091#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#3504#3505#0" expanded="false" />
-            <element signature="e#3562#3563#0" expanded="false" />
-            <element signature="e#4879#4880#0" expanded="false" />
-            <element signature="e#4928#4929#0" expanded="false" />
-            <element signature="e#11985#11986#0" expanded="false" />
-            <element signature="e#12016#12017#0" expanded="false" />
-            <element signature="e#17088#17089#0" expanded="false" />
-            <element signature="e#17123#17124#0" expanded="false" />
-            <element signature="e#19076#19077#0" expanded="false" />
-            <element signature="e#19128#19129#0" expanded="false" />
-            <element signature="e#21068#21069#0" expanded="false" />
-            <element signature="e#21142#21143#0" expanded="false" />
-            <element signature="e#40955#40956#0" expanded="false" />
-            <element signature="e#40999#41000#0" expanded="false" />
-            <element signature="e#42775#42776#0" expanded="false" />
-            <element signature="e#42819#42820#0" expanded="false" />
-            <element signature="e#44623#44624#0" expanded="false" />
-            <element signature="e#44667#44668#0" expanded="false" />
-            <element signature="e#48004#48005#0" expanded="false" />
-            <element signature="e#48087#48088#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/Weka-3-8/weka.jar!/weka/core/Instances.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="526" column="16" selection-start-line="526" selection-start-column="16" selection-end-line="526" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Weka-3-8/weka.jar!/weka/classifiers/functions/neural/NeuralConnection.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Weka-3-8/weka.jar!/weka/classifiers/functions/MultilayerPerceptron.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="753" column="45" selection-start-line="753" selection-start-column="45" selection-end-line="753" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/io/FileInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2147">
+          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1498,6 +1237,8 @@
             <element signature="e#21335#21336#0" expanded="false" />
             <element signature="e#23597#23598#0" expanded="false" />
             <element signature="e#23651#23652#0" expanded="false" />
+            <element signature="e#24298#24299#0" expanded="false" />
+            <element signature="e#24363#24364#0" expanded="false" />
             <element signature="e#31026#31027#0" expanded="false" />
             <element signature="e#31064#31065#0" expanded="false" />
             <element signature="e#36105#36106#0" expanded="false" />
@@ -1524,146 +1265,6 @@
             <element signature="e#68580#68581#0" expanded="false" />
             <element signature="e#71152#71153#0" expanded="false" />
             <element signature="e#71234#71235#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Weka-3-8/weka.jar!/weka/classifiers/functions/neural/NeuralConnection.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Weka-3-8/weka.jar!/weka/classifiers/functions/MultilayerPerceptron.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="753" column="45" selection-start-line="753" selection-start-column="45" selection-end-line="753" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/core/Instances.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13756">
-          <caret line="765" column="38" selection-start-line="765" selection-start-column="38" selection-end-line="765" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#84643#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#6439#6440#0" expanded="false" />
-            <element signature="e#6478#6479#0" expanded="false" />
-            <element signature="e#8654#8662#0" expanded="false" />
-            <element signature="e#9970#9981#0" expanded="false" />
-            <element signature="e#13405#13406#0" expanded="false" />
-            <element signature="e#13461#13462#0" expanded="false" />
-            <element signature="e#16540#16551#0" expanded="false" />
-            <element signature="e#16627#16644#0" expanded="false" />
-            <element signature="e#18366#18367#0" expanded="false" />
-            <element signature="e#18413#18414#0" expanded="false" />
-            <element signature="e#18758#18768#0" expanded="false" />
-            <element signature="e#21414#21415#0" expanded="false" />
-            <element signature="e#21465#21466#0" expanded="false" />
-            <element signature="e#23379#23390#0" expanded="false" />
-            <element signature="e#23466#23483#0" expanded="false" />
-            <element signature="e#29367#29375#0" expanded="false" />
-            <element signature="e#33190#33201#0" expanded="false" />
-            <element signature="e#33273#33290#0" expanded="false" />
-            <element signature="e#35194#35205#0" expanded="false" />
-            <element signature="e#35273#35290#0" expanded="false" />
-            <element signature="e#36328#36339#0" expanded="false" />
-            <element signature="e#61378#61395#0" expanded="false" />
-            <element signature="e#68553#68563#0" expanded="false" />
-            <element signature="e#70059#70070#0" expanded="false" />
-            <element signature="e#84579#84580#0" expanded="false" />
-            <element signature="e#84639#84640#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/core/Instance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1805">
-          <caret line="114" column="17" selection-start-line="114" selection-start-column="17" selection-end-line="114" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#22236#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/MultilayerPerceptron.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27778">
-          <caret line="1590" column="31" selection-start-line="1590" selection-start-column="31" selection-end-line="1590" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#85725#0" expanded="false" />
-            <element signature="imports" expanded="false" />
-            <element signature="e#5402#5403#0" expanded="false" />
-            <element signature="e#5459#5460#0" expanded="false" />
-            <element signature="e#13200#13201#0" expanded="false" />
-            <element signature="e#13227#13228#0" expanded="false" />
-            <element signature="e#13364#13365#0" expanded="false" />
-            <element signature="e#13428#13429#0" expanded="false" />
-            <element signature="e#13813#17562#0" expanded="false" />
-            <element signature="e#14351#14369#0" expanded="false" />
-            <element signature="e#16240#16258#0" expanded="false" />
-            <element signature="e#17561#17562#0" expanded="false" />
-            <element signature="e#21369#21370#0" expanded="false" />
-            <element signature="e#21433#21434#0" expanded="false" />
-            <element signature="e#23086#23454#0" expanded="false" />
-            <element signature="e#23453#23454#0" expanded="false" />
-            <element signature="e#23626#24242#0" expanded="false" />
-            <element signature="e#24241#24242#0" expanded="false" />
-            <element signature="e#26254#27252#0" expanded="false" />
-            <element signature="e#27251#27252#0" expanded="false" />
-            <element signature="e#27295#27461#0" expanded="false" />
-            <element signature="e#27460#27461#0" expanded="false" />
-            <element signature="e#27504#27779#0" expanded="false" />
-            <element signature="e#27778#27779#0" expanded="false" />
-            <element signature="e#27923#27924#0" expanded="false" />
-            <element signature="e#27987#27988#0" expanded="false" />
-            <element signature="e#33809#33810#0" expanded="false" />
-            <element signature="e#33830#33831#0" expanded="false" />
-            <element signature="e#33931#33932#0" expanded="false" />
-            <element signature="e#33955#33956#0" expanded="false" />
-            <element signature="e#34756#34757#0" expanded="false" />
-            <element signature="e#34780#34781#0" expanded="false" />
-            <element signature="e#35032#35033#0" expanded="false" />
-            <element signature="e#35062#35063#0" expanded="false" />
-            <element signature="e#35176#35177#0" expanded="false" />
-            <element signature="e#35209#35210#0" expanded="false" />
-            <element signature="e#35424#35425#0" expanded="false" />
-            <element signature="e#35459#35460#0" expanded="false" />
-            <element signature="e#35566#35567#0" expanded="false" />
-            <element signature="e#35604#35605#0" expanded="false" />
-            <element signature="e#35744#35745#0" expanded="false" />
-            <element signature="e#35771#35772#0" expanded="false" />
-            <element signature="e#35886#35887#0" expanded="false" />
-            <element signature="e#35916#35917#0" expanded="false" />
-            <element signature="e#36270#36271#0" expanded="false" />
-            <element signature="e#36299#36300#0" expanded="false" />
-            <element signature="e#36781#36782#0" expanded="false" />
-            <element signature="e#36814#36815#0" expanded="false" />
-            <element signature="e#37359#37360#0" expanded="false" />
-            <element signature="e#37390#37391#0" expanded="false" />
-            <element signature="e#38312#38313#0" expanded="false" />
-            <element signature="e#38340#38341#0" expanded="false" />
-            <element signature="e#39946#39947#0" expanded="false" />
-            <element signature="e#39977#39978#0" expanded="false" />
-            <element signature="e#40386#40387#0" expanded="false" />
-            <element signature="e#40408#40409#0" expanded="false" />
-            <element signature="e#40775#40776#0" expanded="false" />
-            <element signature="e#40801#40802#0" expanded="false" />
-            <element signature="e#41135#41136#0" expanded="false" />
-            <element signature="e#41163#41164#0" expanded="false" />
-            <element signature="e#65058#65066#0" expanded="false" />
-            <element signature="e#73597#73605#0" expanded="false" />
-            <element signature="e#77713#77714#0" expanded="false" />
-            <element signature="e#77772#77773#0" expanded="false" />
-            <element signature="e#77876#77877#0" expanded="false" />
-            <element signature="e#77943#77944#0" expanded="false" />
-            <element signature="e#78049#78050#0" expanded="false" />
-            <element signature="e#78118#78119#0" expanded="false" />
-            <element signature="e#85661#85662#0" expanded="false" />
-            <element signature="e#85721#85722#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1707,26 +1308,185 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/io/FileInputStream.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/util/Random.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2147">
-          <caret line="137" column="0" selection-start-line="137" selection-start-column="0" selection-end-line="137" selection-end-column="0" />
+        <state relative-caret-position="1881">
+          <caret line="134" column="11" selection-start-line="134" selection-start-column="11" selection-end-line="134" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#48091#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#3504#3505#0" expanded="false" />
+            <element signature="e#3562#3563#0" expanded="false" />
+            <element signature="e#4879#4880#0" expanded="false" />
+            <element signature="e#4928#4929#0" expanded="false" />
+            <element signature="e#11985#11986#0" expanded="false" />
+            <element signature="e#12016#12017#0" expanded="false" />
+            <element signature="e#17088#17089#0" expanded="false" />
+            <element signature="e#17123#17124#0" expanded="false" />
+            <element signature="e#19076#19077#0" expanded="false" />
+            <element signature="e#19128#19129#0" expanded="false" />
+            <element signature="e#21068#21069#0" expanded="false" />
+            <element signature="e#21142#21143#0" expanded="false" />
+            <element signature="e#40955#40956#0" expanded="false" />
+            <element signature="e#40999#41000#0" expanded="false" />
+            <element signature="e#42775#42776#0" expanded="false" />
+            <element signature="e#42819#42820#0" expanded="false" />
+            <element signature="e#44623#44624#0" expanded="false" />
+            <element signature="e#44667#44668#0" expanded="false" />
+            <element signature="e#48004#48005#0" expanded="false" />
+            <element signature="e#48087#48088#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/util/AbstractList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2285">
+          <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/core/Copyable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/core/Instance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/core/converters/Loader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="61" column="26" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/core/converters/AbstractLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/core/Capabilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="100" column="14" selection-start-line="100" selection-start-column="14" selection-end-line="100" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/core/converters/ArffLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/filters/Filter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="263" column="0" selection-start-line="263" selection-start-column="0" selection-end-line="263" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/filters/unsupervised/attribute/NominalToBinary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="519" column="0" selection-start-line="519" selection-start-column="0" selection-end-line="519" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/core/converters/AbstractFileLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/lang/Double.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="54" column="31" selection-start-line="54" selection-start-column="31" selection-end-line="54" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_77/src.zip!/java/util/Scanner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42978">
+        <state relative-caret-position="120">
           <caret line="2344" column="0" selection-start-line="2344" selection-start-column="0" selection-end-line="2344" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/core/DenseInstance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="207" column="0" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/core/Instances.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="900" column="0" selection-start-line="900" selection-start-column="0" selection-end-line="900" selection-end-column="0" />
+          <folding>
+            <element signature="e#6439#6440#0" expanded="true" />
+            <element signature="e#6478#6479#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/AbstractClassifier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="170" column="16" selection-start-line="170" selection-start-column="16" selection-end-line="170" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weka/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/Weka-3-8/weka-src.jar!/src/main/java/weka/classifiers/functions/MultilayerPerceptron.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="1953" column="28" selection-start-line="1953" selection-start-column="28" selection-end-line="1953" selection-end-column="28" />
+          <folding>
+            <element signature="e#35744#35745#0" expanded="true" />
+            <element signature="e#35771#35772#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/hehe2/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        <state relative-caret-position="247">
+          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1735,8 +1495,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hh/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-270">
-          <caret line="167" column="73" selection-start-line="167" selection-start-column="73" selection-end-line="167" selection-end-column="73" />
+        <state relative-caret-position="71">
+          <caret line="161" column="82" selection-start-line="161" selection-start-column="82" selection-end-line="161" selection-end-column="82" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1820,7 +1580,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>weka</last-edited>
+          <last-edited>java</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

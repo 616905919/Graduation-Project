@@ -1,6 +1,3 @@
-import com.sun.org.apache.xpath.internal.operations.Mod;
-import com.sun.xml.internal.ws.util.StringUtils;
-
 import java.io.*;
 import java.util.*;
 
@@ -61,11 +58,13 @@ class state {
 class Instances {
     public ArrayList<Instance> ins;
     public int n;//number of instance ins.length
+    public int featureNum;
 
     public Instances() {
         ins = new ArrayList<Instance>();
 //        Collections.shuffle(ins);
         n = 0;
+        featureNum = 0;
     }
 }
 
@@ -157,28 +156,49 @@ class Zk implements Comparable<Zk> {
 }
 
 public class Main {
-    public static final float Yita = 0.3f;
+    public static final float Yita = 0.1f;
 
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
-//        float[] f = new float[]{1f,0.6f,0.45f,0.3f};
-//        int[] ans = GetMaxExpF(f);
-//        for(int  i :ans){
-//            System.out.println(i);
-//        }
-        File f = new File("D:\\design(2)\\design\\data\\8、credit\\credit2.txt");
+        File f = new File("D:\\design(2)\\design\\data\\5、verhicle\\vehicle_ok.txt");
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
         Instances instances = ReadInstance(br);
+        Collections.shuffle(instances.ins);
+        pretreatData(instances);
+        long now = System.currentTimeMillis();
 //        Model fnnmo = TrainFnn(instances, 5, 1000);
-        Model model = Train(instances, 10, 10000);
-        for (int i = 0; i < 2; i++) {
+        Model model = Train(instances, 6, 100000);
+        for (int i = 0; i < 1; i++) {
             for (int j = 0; j < 10; j++) {
 //                new TrainModel(instances, j, 10000).start();
 //                Model model = Train(instances, j, 10000);
             }
         }
+        System.out.println("this algorithm cost " + (System.currentTimeMillis() - now) + "ms to train and classify data");
+    }
+
+    private static void pretreatData(Instances instances) {
+        int featureNum = instances.featureNum;
+        float[] ranges = new float[featureNum];
+        float[] bases = new float[featureNum];
+        for (int i = 0; i < instances.featureNum; i++) {
+            float min = Float.POSITIVE_INFINITY;
+            float max = Float.NEGATIVE_INFINITY;
+            for (int j = 0; j < instances.n; j++) {
+                min = Float.min(min, instances.ins.get(j).f[i]);
+                max = Float.max(max, instances.ins.get(j).f[i]);
+            }
+            ranges[i] = (max - min) / 2;
+            bases[i] = (max + min) / 2;
+        }
+        for (int i = 0; i < instances.n; i++) {
+            for (int j = 0; j < instances.featureNum; j++) {
+                instances.ins.get(i).f[j] = (instances.ins.get(i).f[j] - bases[j]) / ranges[j];
+            }
+        }
     }
 
     public static Model TrainFnn(Instances instances, int i, int IterationTimes) {
+        int timenow = 1;
         float Now_f = 0;
         Model model = new Model(instances.ins.get(0).n, i, instances.n);
         InitModel(model);
@@ -188,7 +208,7 @@ public class Main {
             y[j] = instances.ins.get(j).y;
         }
         float y2 = InnerProduct(y, y);
-        while (IterationTimes-- > 0) {
+        while (timenow++ < IterationTimes) {
             z = ClassifyAll(model, instances, true);
             System.out.println(IterationTimes);
             int[] tmpz = null;
@@ -197,7 +217,7 @@ public class Main {
                 Now_f = 2 * InnerProduct(z, y) / (y2 + InnerProduct(z, z));
             }
             if (IterationTimes % 1 == 0 && IterationTimes < 50)
-                System.out.println("int the" + (100000 - IterationTimes) + "times iteration , the approximate f is " + Now_f);
+                System.out.println("in the" + (100000 - IterationTimes) + "times iteration , the approximate f is " + Now_f);
             for (int j = 0; j < instances.n; j++) {
 //                if (IterationTimes < 50)
 //                    if (tmpz[j] == y[j]) continue;
@@ -229,7 +249,9 @@ public class Main {
      * @return
      */
     public static Model Train(Instances instances, int i, int IterationTimes) throws CloneNotSupportedException {
-        int maxDonotUp = 2;
+        int timeNow = 1;
+        double fLast = 0;
+        int maxDonotUp = 3;
         Model model = new Model(instances.ins.get(0).n, i, instances.n);
         //int batch = (int) Math.sqrt(instances.n);
         int batch = instances.n;
@@ -242,13 +264,17 @@ public class Main {
         float y2 = InnerProduct(y, y);
         z = ClassifyAll(model, instances, false);
         all:
-        while (IterationTimes-- > 0) {
+        while (timeNow++ < IterationTimes) {
             //Collections.shuffle(instances.ins);
+            double Yita = Math.sqrt(Main.Yita * timeNow);
             z = ClassifyAll(model, instances, false);
             float yz = InnerProduct(y, z);
             float Now_f = 2 * yz / (InnerProduct(z, z) + InnerProduct(y, y));
-            if (IterationTimes % 1 == 0)
-                System.out.println("int the" + (100000 - IterationTimes) + "times iteration , the approximate f is " + Now_f);
+            if (timeNow % 1000 == 0) {
+                if (Now_f - fLast < 0.001) break all;
+                System.out.println("in the" + timeNow + "times iteration , the approximate f is " + Now_f);
+                fLast = Now_f;
+            }
             float z2 = InnerProduct(z, z);
             float y2z2 = y2 + z2;
             Model LastModel = model.clone();
@@ -258,7 +284,7 @@ public class Main {
             while (true) {
                 if (j + batchNow > instances.n) {
                     j = 0;
-                    batchNow = (int) (batchNow * 0.5);
+                    batchNow = (int) (batchNow * 0.8);
                     //System.out.println(batchNow);
                     if (batchNow <= instances.n * 0.001) {
                         System.out.println(maxDonotUp);
@@ -473,12 +499,13 @@ public class Main {
 
     private static float Sigmod(float f, boolean classify) {
         float ff = (float) (1. / (1 + Math.exp(-f)));
-        if (!classify) {
-            if (ff < 0.1) return 0.1f;
-            else if (ff > 0.9) return 0.9f;
-            else
-                return ff;
-        } else return ff;
+        return ff;
+//        if (!classify) {
+//            if (ff < 0.1) return 0.1f;
+//            else if (ff > 0.9) return 0.9f;
+//            else
+//                return ff;
+//        } else return ff;
     }
 
     private static Instances ReadInstance(BufferedReader br) throws IOException {
@@ -493,8 +520,7 @@ public class Main {
                 while (s.hasNext()) {
                     l.add(s.nextFloat());
                 }
-                float y = l.get(l.size() - 1);
-                l.remove(l.size() - 1);
+                float y = l.remove(l.size() - 1);
                 n = l.size();
                 float[] fl = new float[n];
                 for (int i = 0; i < fl.length; i++) {
@@ -504,14 +530,21 @@ public class Main {
             } else {
                 int i = 0;
                 float[] fl = new float[n];
-                while (i < n) {
-                    fl[i++] = s.nextFloat();
+                try {
+                    while (i < n) {
+                        fl[i++] = s.nextFloat();
+                    }
+                    float y = s.nextFloat();
+                    instances.ins.add(new Instance(fl, n, y));
+                } catch (Exception e) {
+//                    System.out.println(str);
+//                    e.printStackTrace();
                 }
-                float y = s.nextFloat();
-                instances.ins.add(new Instance(fl, n, y));
+
             }
         }
         instances.n = instances.ins.size();
+        instances.featureNum = n;
         return instances;
     }
 
