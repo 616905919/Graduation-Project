@@ -161,14 +161,14 @@ public class Main {
 
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
 //        File f = new File("D:\\design(2)\\design\\data\\6、haberman\\haberman_ok.txt");
-        File f = new File("D:\\design(2)\\design\\data\\1、yeast\\yeast.txt");
+        File f = new File("D:\\design(2)\\design\\data\\8、credit\\credit-sele_ok.txt");
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
         Instances instances = ReadInstance(br);
         Collections.shuffle(instances.ins);
         pretreatData(instances);
         now = System.currentTimeMillis();
-        Model fnnmo = TrainFnn(instances, 7, 10000);
-//        Model model = Train(instances, 6, 100000);
+//        Model fnnmo = TrainFnn(instances, 7, 10000);
+        Model model = Train(instances, 6, 100000);
         for (int i = 0; i < 1; i++) {
             for (int j = 0; j < 10; j++) {
 //                new TrainModel(instances, j, 10000).start();
