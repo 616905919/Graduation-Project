@@ -359,6 +359,8 @@ public class Main {
                     float dt = z[index] * (1 - z[index]) * (y[index] / y2z2 - 2 * yz / y2z2 / y2z2 * z[index]);
                     int k = 0;
                     int l;
+                    //使用线程池以及多线程 可以在隐藏节点数目较多的时候 优化每次迭代速度
+                    //↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 用wait notify
                     for (; k < model.HiddenNodeNum; k++) {
                         model.OutputLayer[k] += Yita * dt * model.OutputOfHiddenLayer[index][k];
                         l = 0;
@@ -370,6 +372,7 @@ public class Main {
                     }
                     model.OutputLayer[k] += Yita * dt;
                 }
+                //↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
                 z = ClassifyAll(model, instances, false);
                 float f_new = 2 * InnerProduct(y, z) / (InnerProduct(z, z) + InnerProduct(y, y));
                 j += batchNow;
@@ -414,7 +417,7 @@ public class Main {
         System.out.println(c + "\t" + d);
         new Exception().printStackTrace();
     }
-
+    //2.3 里面那个算法的实现 以及优化
     private static int[] GetMaxExpF(float[] z) {
         long time = System.currentTimeMillis();
         int[] ans = null;
