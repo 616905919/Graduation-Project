@@ -161,7 +161,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
 //        File f = new File("D:\\design(2)\\design\\data\\6、haberman\\haberman_ok.txt");
-        File f = new File("D:\\design(2)\\design\\data\\8、credit\\credit-sele_ok.txt");
+        File f = new File("E:\\git\\Graduation-Project\\data\\1、yeast\\yeast.txt");//文件路径
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
         Instances instances = ReadInstance(br);
         Collections.shuffle(instances.ins);
@@ -169,6 +169,7 @@ public class Main {
         now = System.currentTimeMillis();
 //        Model fnnmo = TrainFnn(instances, 7, 10000);
         Model model = Train(instances, 6, 100000);
+//        TrainKCross(instances, 6, 100000);
         for (int i = 0; i < 1; i++) {
             for (int j = 0; j < 10; j++) {
 //                new TrainModel(instances, j, 10000).start();
@@ -199,7 +200,7 @@ public class Main {
         }
     }
 
-    public static Model TrainFnn(Instances instances, int i, int IterationTimes) throws CloneNotSupportedException {
+    public static Model TrainFnn(Instances instances, int i, int IterationTimes) throws CloneNotSupportedException {//算法1最大化F1值分类过程的神经网络
         double Yita = Main.Yita / Math.sqrt(instances.n);
         int timenow = 1;
         double maxF = Double.NEGATIVE_INFINITY;
@@ -260,6 +261,39 @@ public class Main {
         return model;
     }
 
+    public static void TrainKCross(Instances instances, int i, int IterationTimes) throws CloneNotSupportedException {//算法2的交叉验证
+        float[] y = new float[instances.n];
+        for (int j = 0; j < instances.n; j++) {
+            y[j] = instances.ins.get(j).y;
+        }
+        Instances[] Kinstances = new Instances[3];
+        for (int j = 0; j < 3; j++) {
+            Kinstances[j] = new Instances();
+            if (j == 0)
+                Kinstances[j].ins.addAll(instances.ins.subList(instances.n / 3 + 1, instances.n));
+            else if (j == 1) {
+                Kinstances[j].ins.addAll(instances.ins.subList(0, instances.n / 3 + 1));
+                Kinstances[j].ins.addAll(instances.ins.subList(instances.n * 2 / 3 + 1, instances.n));
+            } else {
+                Kinstances[j].ins.addAll(instances.ins.subList(0, instances.n * 2 / 3 + 1));
+            }
+            Kinstances[j].n = Kinstances[j].ins.size();
+            Kinstances[j].featureNum = instances.featureNum;
+        }
+        Model model0 = Train(Kinstances[0], i, IterationTimes);
+        Model model1 = Train(Kinstances[1], i, IterationTimes);
+        Model model2 = Train(Kinstances[2], i, IterationTimes);
+        float[][] ans = new float[3][];
+        ans[0] = ClassifyAll(model0, instances);
+        ans[1] = ClassifyAll(model1, instances);
+        ans[2] = ClassifyAll(model2, instances);
+        float[] trueAns = new float[instances.n];
+        System.arraycopy(ans[0], 0, trueAns, 0, instances.n - Kinstances[0].n);
+        System.arraycopy(ans[1], instances.n / 3 + 1, trueAns, instances.n / 3 + 1, instances.n - Kinstances[1].n);
+        System.arraycopy(ans[2], instances.n * 2 / 3 + 1, trueAns, instances.n * 2 / 3 + 1, instances.n - Kinstances[2].n);
+        printPerformance(trueAns, y, i);
+    }
+
     /**
      * @param instances
      * @param i              the number of hidden node
@@ -267,10 +301,10 @@ public class Main {
      * @return
      */
 
-    public static Model Train(Instances instances, int i, int IterationTimes) throws CloneNotSupportedException {
+    public static Model Train(Instances instances, int i, int IterationTimes) throws CloneNotSupportedException {//基于最小化损失学习的神经网络
         int timeNow = 1;
         double fLast = 0;
-        int maxDonotUp = 3;
+        int maxDonotUp = 3;//可以调整 影响最终精度
         Model model = new Model(instances.ins.get(0).n, i, instances.n);
         //int batch = (int) Math.sqrt(instances.n);
         int batch = instances.n;
@@ -284,15 +318,15 @@ public class Main {
         z = ClassifyAll(model, instances, false);
         all:
         while (timeNow++ < IterationTimes) {
-            if (System.currentTimeMillis() - now > 300000) break all;
+//            if (System.currentTimeMillis() - now > 300000) break all;
             //Collections.shuffle(instances.ins);
             double Yita = Math.sqrt(Main.Yita * timeNow);
             z = ClassifyAll(model, instances, false);
             float yz = InnerProduct(y, z);
             float Now_f = 2 * yz / (InnerProduct(z, z) + InnerProduct(y, y));
             if (timeNow % 1 == 0) {
-                if (timeNow % 500 == 0) {
-                    if (Now_f - fLast < 0.001)
+                if (timeNow % 500 == 0) {//可以调整 影响最终精度
+                    if (Now_f - fLast < 0.001)//可以调整 影响最终精度
                         break all;
                     fLast = Now_f;
                 }
@@ -351,6 +385,22 @@ public class Main {
 //        }
 //        int[] z2 = GetMaxExpF(ztmp);
 //        System.out.println("the number of hidden node is " + i + "\nthe f of max expectation algorithm is" + 2 * InnerProduct(z2, y) / (y2 + InnerProduct(z2)));
+        printPerformance(z, y, i);
+//        int a = 0, b = 0, c = 0, d = 0;
+//        for (int j = 0; j < z.length; j++) {
+//            z[j] = z[j] >= 0.5 ? 1 : 0;
+//            if (y[j] == 1 && z[j] == 1) d++;
+//            else if (y[j] == 1 && z[j] == 0) c++;
+//            else if (y[j] == 0 && z[j] == 0) a++;
+//            else b++;
+//        }
+//        System.out.println("the number of hidden node is " + i + "\n the final f is " + 2 * InnerProduct(z, y) / (y2 + InnerProduct(z, z)));
+//        System.out.println(a + "\t" + b);
+//        System.out.println(c + "\t" + d);
+        return model;
+    }
+
+    private static void printPerformance(float[] z, float[] y, int i) {
         int a = 0, b = 0, c = 0, d = 0;
         for (int j = 0; j < z.length; j++) {
             z[j] = z[j] >= 0.5 ? 1 : 0;
@@ -359,10 +409,10 @@ public class Main {
             else if (y[j] == 0 && z[j] == 0) a++;
             else b++;
         }
-        System.out.println("the number of hidden node is " + i + "\n the final f is " + 2 * InnerProduct(z, y) / (y2 + InnerProduct(z, z)));
+        System.out.println("the number of hidden node is " + i + "\n the final f is " + 2 * InnerProduct(z, y) / (InnerProduct(y, y) + InnerProduct(z, z)));
         System.out.println(a + "\t" + b);
         System.out.println(c + "\t" + d);
-        return model;
+        new Exception().printStackTrace();
     }
 
     private static int[] GetMaxExpF(float[] z) {
@@ -451,6 +501,22 @@ public class Main {
             }
         }
         return z;
+    }
+
+    private static float[] ClassifyAll(Model model, Instances instances) {
+        float[] z = new float[instances.n];
+        for (int i = 0; i < z.length; i++) {
+            z[i] = ClassifyOne(instances.ins.get(i), model);
+        }
+        return z;
+    }
+
+    private static float ClassifyOne(Instance instance, Model model) {
+        float[] h = new float[model.HiddenNodeNum];
+        for (int i = 0; i < model.HiddenNodeNum; i++) {
+            h[i] = Sigmod(InnerProduct(instance.f, model.HiddenLayer[i]), true);
+        }
+        return Sigmod(InnerProduct(h, model.OutputLayer), true);
     }
 
     private static float ClassifyOne(int index, Instance instance, Model model, boolean classify) {
