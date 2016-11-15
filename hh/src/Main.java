@@ -159,7 +159,7 @@ public class Main {
     public static final float Yita = 0.1f;
     public static long now = 0;
     static float[] sigmodFast = new float[10001];
-    private static long sigmodTime = 0;
+    static long innerProductTime = 0;
 
     static {
         initSigmodFast();
@@ -167,7 +167,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
 //        File f = new File("D:\\design(2)\\design\\data\\6、haberman\\haberman_ok.txt");
-        File f = new File("E:\\git\\Graduation-Project\\data\\1、yeast\\yeast.txt");//文件路径
+        File f = new File("E:\\git\\Graduation-Project\\data\\2、albone\\albone.txt");//文件路径
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
         Instances instances = ReadInstance(br);
         Collections.shuffle(instances.ins);
@@ -183,7 +183,7 @@ public class Main {
             }
         }
         System.out.println("this algorithm cost " + (System.currentTimeMillis() - now) + "ms to train and classify data");
-        System.out.println("this algorithm cost " + sigmodTime + "ms to calculate sigmod");
+        System.out.println("this algorithm cost " + innerProductTime + "ms to calculate inner product");
     }
 
     private static void pretreatData(Instances instances) {
@@ -331,8 +331,8 @@ public class Main {
             z = ClassifyAll(model, instances, false);
             float yz = InnerProduct(y, z);
             float Now_f = 2 * yz / (InnerProduct(z, z) + InnerProduct(y, y));
-            if (timeNow % 1 == 0) {
-                if (timeNow % 500 == 0) {//可以调整 影响最终精度
+            if (timeNow % 20 == 0) {
+                if (timeNow % 200 == 0) {//可以调整 影响最终精度
                     if (Now_f - fLast < 0.001)//可以调整 影响最终精度
                         break all;
                     fLast = Now_f;
@@ -349,7 +349,7 @@ public class Main {
             while (true) {
                 if (j + batchNow > instances.n) {
                     j = 0;
-                    batchNow = (int) (batchNow * 0.8);
+                    batchNow = (int) (batchNow * 0.6);
                     //System.out.println(batchNow);
                     if (batchNow <= instances.n * 0.001) {
                         System.out.println(maxDonotUp);
@@ -556,14 +556,19 @@ public class Main {
      * @return
      */
     private static float InnerProduct(float[] f, float[] floats) {
-        float re = 0;
-        int i = 0;
-        for (; i < f.length; i++) {
-            re += f[i] * floats[i];
+        long now = System.currentTimeMillis();
+        try {
+            float re = 0;
+            int i = 0;
+            for (; i < f.length; i++) {
+                re += f[i] * floats[i];
+            }
+            if (f.length == floats.length) return re;
+            else
+                return re + floats[i];
+        } finally {
+            innerProductTime += System.currentTimeMillis() - now;
         }
-        if (f.length == floats.length) return re;
-        else
-            return re + floats[i];
     }
 
     private static float InnerProduct(int[] i) {
@@ -599,15 +604,13 @@ public class Main {
     private static float Sigmod(float f, boolean classify) {
         long now = System.currentTimeMillis();
         try {
-//            float ff = (float) (1 / (1 + Math.exp(-f)));
-//            return ff;
+//            return sigmod(f);
             return sigmodFast(f);
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println(f);
-            return -1;
+            return 0;
         } finally {
-            sigmodTime += System.currentTimeMillis() - now;
         }
 //        if (!classify) {
 //            if (ff < 0.1) return 0.1f;
@@ -692,7 +695,7 @@ public class Main {
     private static void initSigmodFast() {
         for (int i = 0; i < 10001; i++) {
             try {
-                sigmodFast[i] = sigmod((float) (-(i - 5000) * 0.01));
+                sigmodFast[i] = sigmod((float) ((i - 5000) * 0.01));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -700,7 +703,7 @@ public class Main {
     }
 
     private static float sigmod(float f) {
-        return (float) (1.0 / (1.0 + Math.exp(f)));
+        return (float) (1.0 / (1.0 + Math.exp(-f)));
     }
 }
 

@@ -28,15 +28,15 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/hh/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="186" column="5" selection-start-line="186" selection-start-column="5" selection-end-line="186" selection-end-column="5" />
+            <state relative-caret-position="-6">
+              <caret line="351" column="52" selection-start-line="351" selection-start-column="52" selection-end-line="351" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#16611#16625#0" expanded="true" />
-                <element signature="e#16816#16830#0" expanded="true" />
-                <element signature="e#22783#22790#0" expanded="true" />
-                <element signature="e#24995#24996#0" expanded="true" />
-                <element signature="e#25053#25054#0" expanded="true" />
+                <element signature="e#16625#16639#0" expanded="true" />
+                <element signature="e#16830#16844#0" expanded="true" />
+                <element signature="e#22873#22880#0" expanded="true" />
+                <element signature="e#25084#25085#0" expanded="true" />
+                <element signature="e#25143#25144#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -724,12 +724,12 @@
       <workItem from="1478079956997" duration="2900000" />
       <workItem from="1478463317785" duration="37502000" />
       <workItem from="1478845505160" duration="10389000" />
-      <workItem from="1479094167700" duration="6872000" />
+      <workItem from="1479094167700" duration="10645000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74539000" />
+    <option name="totallyTimeSpent" value="78312000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -874,13 +874,22 @@
           <properties />
           <option name="timeStamp" value="49" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/hh/src/Main.java</url>
+          <line>169</line>
+          <properties />
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="54" />
+      <option name="time" value="55" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="z[28]" language="JAVA" custom="" />
         <watch expression="z[33]" language="JAVA" custom="" />
+        <watch expression="sigmodFast[5000]" language="JAVA" custom="" />
+        <watch expression="sigmodFast[5001]" language="JAVA" custom="" />
+        <watch expression="sigmodFast[5002]" language="JAVA" custom="" />
       </configuration>
     </watches-manager>
   </component>
@@ -903,11 +912,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#16611#16625#0" expanded="true" />
-            <element signature="e#16816#16830#0" expanded="true" />
-            <element signature="e#22783#22790#0" expanded="true" />
-            <element signature="e#24995#24996#0" expanded="true" />
-            <element signature="e#25053#25054#0" expanded="true" />
+            <element signature="e#16625#16639#0" expanded="true" />
+            <element signature="e#16830#16844#0" expanded="true" />
+            <element signature="e#22873#22880#0" expanded="true" />
+            <element signature="e#25084#25085#0" expanded="true" />
+            <element signature="e#25143#25144#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -934,11 +943,11 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#16611#16625#0" expanded="true" />
-            <element signature="e#16816#16830#0" expanded="true" />
-            <element signature="e#22783#22790#0" expanded="true" />
-            <element signature="e#24995#24996#0" expanded="true" />
-            <element signature="e#25053#25054#0" expanded="true" />
+            <element signature="e#16625#16639#0" expanded="true" />
+            <element signature="e#16830#16844#0" expanded="true" />
+            <element signature="e#22873#22880#0" expanded="true" />
+            <element signature="e#25084#25085#0" expanded="true" />
+            <element signature="e#25143#25144#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1175,15 +1184,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/hh/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="186" column="5" selection-start-line="186" selection-start-column="5" selection-end-line="186" selection-end-column="5" />
+        <state relative-caret-position="-6">
+          <caret line="351" column="52" selection-start-line="351" selection-start-column="52" selection-end-line="351" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#16611#16625#0" expanded="true" />
-            <element signature="e#16816#16830#0" expanded="true" />
-            <element signature="e#22783#22790#0" expanded="true" />
-            <element signature="e#24995#24996#0" expanded="true" />
-            <element signature="e#25053#25054#0" expanded="true" />
+            <element signature="e#16625#16639#0" expanded="true" />
+            <element signature="e#16830#16844#0" expanded="true" />
+            <element signature="e#22873#22880#0" expanded="true" />
+            <element signature="e#25084#25085#0" expanded="true" />
+            <element signature="e#25143#25144#0" expanded="true" />
           </folding>
         </state>
       </provider>
