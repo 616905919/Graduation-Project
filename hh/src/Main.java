@@ -1,29 +1,12 @@
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Created by ImJosMR on 2016/6/15.
  */
 
-/**
- * <li> y is true laber</li>
- * <li> f is feature vector</li>
- * <li> n is the number of features
- */
-class Instance {
-    public float y;
-    public float[] f;
-    public int n;
-
-    public Instance() {
-    }
-
-    public Instance(float[] feature, int i, float label) {
-        y = label;
-        f = feature;
-        n = i;
-    }
-}
 
 /**
  * <li> a means z*y</li>
@@ -55,18 +38,6 @@ class state {
     }
 }
 
-class Instances {
-    public ArrayList<Instance> ins;
-    public int n;//number of instance ins.length
-    public int featureNum;
-
-    public Instances() {
-        ins = new ArrayList<Instance>();
-//        Collections.shuffle(ins);
-        n = 0;
-        featureNum = 0;
-    }
-}
 
 class Model implements Cloneable {
     int HiddenNodeNum;
@@ -167,14 +138,14 @@ public class Main {
 
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
 //        File f = new File("D:\\design(2)\\design\\data\\6、haberman\\haberman_ok.txt");
-        File f = new File("E:\\git\\Graduation-Project\\data\\2、albone\\albone.txt");//文件路径
+        File f = new File("C:\\Users\\jiayao\\git\\Graduation-Project\\data\\2、albone\\albone.txt");//文件路径
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
         Instances instances = ReadInstance(br);
         Collections.shuffle(instances.ins);
         pretreatData(instances);
         now = System.currentTimeMillis();
 //        Model fnnmo = TrainFnn(instances, 7, 10000);
-        Model model = Train(instances, 6, 100000);
+        Model model = Train(instances, 7, 100000);
 //        TrainKCross(instances, 6, 100000);
         for (int i = 0; i < 1; i++) {
             for (int j = 0; j < 10; j++) {
@@ -309,6 +280,7 @@ public class Main {
      */
 
     public static Model Train(Instances instances, int i, int IterationTimes) throws CloneNotSupportedException {//基于最小化损失学习的神经网络
+        ExecutorService pool = Executors.newFixedThreadPool(i);
         int timeNow = 1;
         double fLast = 0;
         int maxDonotUp = 3;//可以调整 影响最终精度
@@ -331,13 +303,13 @@ public class Main {
             z = ClassifyAll(model, instances, false);
             float yz = InnerProduct(y, z);
             float Now_f = 2 * yz / (InnerProduct(z, z) + InnerProduct(y, y));
-            if (timeNow % 20 == 0) {
-                if (timeNow % 200 == 0) {//可以调整 影响最终精度
+            if (timeNow % 1 == 0) {
+                if (timeNow % 300 == 0) {//可以调整 影响最终精度
                     if (Now_f - fLast < 0.001)//可以调整 影响最终精度
                         break all;
                     fLast = Now_f;
                 }
-                if (timeNow % 20 == 0)
+                if (timeNow % 300 == 0)
                     System.out.println("in the" + timeNow + "times iteration , the approximate f is " + Now_f);
             }
             float z2 = InnerProduct(z, z);
@@ -359,25 +331,26 @@ public class Main {
                     }
                 }
                 model = LastModel.clone();
+                float[] tmp = model.OutputLayer;
                 for (int mm = 0; mm < batchNow; mm++) {
                     int index = j + mm;
                     Instance instance = instances.ins.get(index);
-                    float[] tmp = model.OutputLayer;
                     float dt = z[index] * (1 - z[index]) * (y[index] / y2z2 - 2 * yz / y2z2 / y2z2 * z[index]);
                     int k = 0;
-                    int l;
+//                    int l;
                     //使用线程池以及多线程 可以在隐藏节点数目较多的时候 优化每次迭代速度
+                    trainConcurrency(pool, i, model, dt, k, tmp, instance, index, Yita);
                     //↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 用wait notify
-                    for (; k < model.HiddenNodeNum; k++) {
-                        model.OutputLayer[k] += Yita * dt * model.OutputOfHiddenLayer[index][k];
-                        l = 0;
-                        float dtHidden = dt * tmp[k] * model.OutputOfHiddenLayer[index][k] * (1 - model.OutputOfHiddenLayer[index][k]);
-                        for (; l < instance.n; l++) {
-                            model.HiddenLayer[k][l] += Yita * dtHidden * instance.f[l];
-                        }
-                        model.HiddenLayer[k][l] += Yita * dtHidden;
-                    }
-                    model.OutputLayer[k] += Yita * dt;
+//                    for (; k < model.HiddenNodeNum; k++) {
+//                        model.OutputLayer[k] += Yita * dt * model.OutputOfHiddenLayer[index][k];
+//                        int l = 0;
+//                        float dtHidden = dt * tmp[k] * model.OutputOfHiddenLayer[index][k] * (1 - model.OutputOfHiddenLayer[index][k]);
+//                        for (; l < instance.n; l++) {
+//                            model.HiddenLayer[k][l] += Yita * dtHidden * instance.f[l];
+//                        }
+//                        model.HiddenLayer[k][l] += Yita * dtHidden;
+//                    }
+//                    model.OutputLayer[k] += Yita * dt;
                 }
                 //↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
                 z = ClassifyAll(model, instances, false);
@@ -408,6 +381,29 @@ public class Main {
 //        System.out.println(a + "\t" + b);
 //        System.out.println(c + "\t" + d);
         return model;
+    }
+
+    private static void trainConcurrency(ExecutorService pool, int i, Model model, float dt, int k, float[] tmp, Instance instance, int index, double Yita) {
+        Thread[] task = new Thread[i];
+        HiddenCalculateTask.syn_all = new Boolean(false);
+        HiddenCalculateTask.synSignal = new Boolean[i];
+        for (; k < model.HiddenNodeNum; k++) {
+            HiddenCalculateTask.synSignal[k] = new Boolean(false);
+            task[k] = new HiddenCalculateTask(model, dt, k, tmp, instance, index, Yita);
+        }
+        model.OutputLayer[k] += Yita * dt;
+        for (Thread t : task) {
+            pool.execute(t);
+        }
+        synchronized (HiddenCalculateTask.synLock) {
+            while (!HiddenCalculateTask.syn_all) {
+                try {
+                    HiddenCalculateTask.synLock.wait();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
     private static void printPerformance(float[] z, float[] y, int i) {
