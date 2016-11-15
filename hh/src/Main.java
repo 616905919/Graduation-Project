@@ -158,6 +158,12 @@ class Zk implements Comparable<Zk> {
 public class Main {
     public static final float Yita = 0.1f;
     public static long now = 0;
+    static float[] sigmodFast = new float[10001];
+    private static long sigmodTime = 0;
+
+    static {
+        initSigmodFast();
+    }
 
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
 //        File f = new File("D:\\design(2)\\design\\data\\6、haberman\\haberman_ok.txt");
@@ -177,6 +183,7 @@ public class Main {
             }
         }
         System.out.println("this algorithm cost " + (System.currentTimeMillis() - now) + "ms to train and classify data");
+        System.out.println("this algorithm cost " + sigmodTime + "ms to calculate sigmod");
     }
 
     private static void pretreatData(Instances instances) {
@@ -415,8 +422,8 @@ public class Main {
         System.out.println("the number of hidden node is " + i + "\n the final f is " + 2 * InnerProduct(z, y) / (InnerProduct(y, y) + InnerProduct(z, z)));
         System.out.println(a + "\t" + b);
         System.out.println(c + "\t" + d);
-        new Exception().printStackTrace();
     }
+
     //2.3 里面那个算法的实现 以及优化
     private static int[] GetMaxExpF(float[] z) {
         long time = System.currentTimeMillis();
@@ -490,7 +497,6 @@ public class Main {
         }
         return ans;
     }
-
 
     private static float[] ClassifyAll(Model model, Instances instances, boolean classify) {
         float[] z = new float[instances.n];
@@ -591,8 +597,18 @@ public class Main {
     }
 
     private static float Sigmod(float f, boolean classify) {
-        float ff = (float) (1. / (1 + Math.exp(-f)));
-        return ff;
+        long now = System.currentTimeMillis();
+        try {
+//            float ff = (float) (1 / (1 + Math.exp(-f)));
+//            return ff;
+            return sigmodFast(f);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println(f);
+            return -1;
+        } finally {
+            sigmodTime += System.currentTimeMillis() - now;
+        }
 //        if (!classify) {
 //            if (ff < 0.1) return 0.1f;
 //            else if (ff > 0.9) return 0.9f;
@@ -659,6 +675,32 @@ public class Main {
             ans[q.poll().index] = 1;
         }
         return ans;
+    }
+
+    private static float sigmodFast(float x) {
+        if (x <= -50 || x > 49.99) {
+            return sigmod(x);
+        } else {
+            double y = x * 100.0f + 5000.0f;
+            int d = (int) y;
+            double dy = y - d;
+            return sigmodFast[d] + (float) dy * (sigmodFast[d + 1] - sigmodFast[d]);
+        }
+    }
+
+
+    private static void initSigmodFast() {
+        for (int i = 0; i < 10001; i++) {
+            try {
+                sigmodFast[i] = sigmod((float) (-(i - 5000) * 0.01));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private static float sigmod(float f) {
+        return (float) (1.0 / (1.0 + Math.exp(f)));
     }
 }
 
