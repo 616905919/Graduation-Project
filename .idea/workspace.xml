@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="008cecff-7612-430f-894a-d71604ee2a60" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hh/src/Main.java" afterPath="$PROJECT_DIR$/hh/src/Main.java" />
-    </list>
+    <list default="true" id="008cecff-7612-430f-894a-d71604ee2a60" name="Default" comment="" />
     <ignored path="Graduation-Project.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -645,12 +643,12 @@
       <workItem from="1478845505160" duration="10389000" />
       <workItem from="1479094167700" duration="10645000" />
       <workItem from="1479222317988" duration="12728000" />
-      <workItem from="1479262804531" duration="3558000" />
+      <workItem from="1479262804531" duration="3994000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94598000" />
+    <option name="totallyTimeSpent" value="95034000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -662,7 +660,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
