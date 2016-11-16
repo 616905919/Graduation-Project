@@ -302,7 +302,7 @@ public class Main {
             z = ClassifyAll(model, instances, false);
             float yz = InnerProduct(y, z);
             float Now_f = 2 * yz / (InnerProduct(z, z) + InnerProduct(y, y));
-            if (timeNow % 1 == 0) {
+            if (timeNow % 2 == 0) {
                 if (timeNow % 400 == 0) {//可以调整 影响最终精度
                     if (Now_f - fLast < 0.001)//可以调整 影响最终精度
                         break all;
