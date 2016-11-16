@@ -138,7 +138,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
 //        File f = new File("D:\\design(2)\\design\\data\\6、haberman\\haberman_ok.txt");
-        File f = new File("C:\\Users\\jiayao\\git\\Graduation-Project\\data\\2、albone\\albone.txt");//文件路径
+        File f = new File("E:\\git\\Graduation-Project\\data\\2、albone\\albone.txt");//文件路径
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
         Instances instances = ReadInstance(br);
         Collections.shuffle(instances.ins);
@@ -280,7 +280,6 @@ public class Main {
      */
 
     public static Model Train(Instances instances, int i, int IterationTimes) throws CloneNotSupportedException {//基于最小化损失学习的神经网络
-        ExecutorService pool = Executors.newFixedThreadPool(i);
         int timeNow = 1;
         double fLast = 0;
         int maxDonotUp = 3;//可以调整 影响最终精度
@@ -304,12 +303,12 @@ public class Main {
             float yz = InnerProduct(y, z);
             float Now_f = 2 * yz / (InnerProduct(z, z) + InnerProduct(y, y));
             if (timeNow % 1 == 0) {
-                if (timeNow % 300 == 0) {//可以调整 影响最终精度
+                if (timeNow % 400 == 0) {//可以调整 影响最终精度
                     if (Now_f - fLast < 0.001)//可以调整 影响最终精度
                         break all;
                     fLast = Now_f;
                 }
-                if (timeNow % 300 == 0)
+                if (timeNow % 400 == 0)
                     System.out.println("in the" + timeNow + "times iteration , the approximate f is " + Now_f);
             }
             float z2 = InnerProduct(z, z);
@@ -339,18 +338,18 @@ public class Main {
                     int k = 0;
 //                    int l;
                     //使用线程池以及多线程 可以在隐藏节点数目较多的时候 优化每次迭代速度
-                    trainConcurrency(pool, i, model, dt, k, tmp, instance, index, Yita);
+//                    trainConcurrency(pool, i, model, dt, k, tmp, instance, index, Yita);
                     //↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ 用wait notify
-//                    for (; k < model.HiddenNodeNum; k++) {
-//                        model.OutputLayer[k] += Yita * dt * model.OutputOfHiddenLayer[index][k];
-//                        int l = 0;
-//                        float dtHidden = dt * tmp[k] * model.OutputOfHiddenLayer[index][k] * (1 - model.OutputOfHiddenLayer[index][k]);
-//                        for (; l < instance.n; l++) {
-//                            model.HiddenLayer[k][l] += Yita * dtHidden * instance.f[l];
-//                        }
-//                        model.HiddenLayer[k][l] += Yita * dtHidden;
-//                    }
-//                    model.OutputLayer[k] += Yita * dt;
+                    for (; k < model.HiddenNodeNum; k++) {
+                        model.OutputLayer[k] += Yita * dt * model.OutputOfHiddenLayer[index][k];
+                        int l = 0;
+                        float dtHidden = dt * tmp[k] * model.OutputOfHiddenLayer[index][k] * (1 - model.OutputOfHiddenLayer[index][k]);
+                        for (; l < instance.n; l++) {
+                            model.HiddenLayer[k][l] += Yita * dtHidden * instance.f[l];
+                        }
+                        model.HiddenLayer[k][l] += Yita * dtHidden;
+                    }
+                    model.OutputLayer[k] += Yita * dt;
                 }
                 //↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
                 z = ClassifyAll(model, instances, false);
