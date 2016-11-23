@@ -138,7 +138,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
 //        File f = new File("D:\\design(2)\\design\\data\\6、haberman\\haberman_ok.txt");
-        File f = new File("E:\\git\\Graduation-Project\\data\\2、albone\\albone.txt");//文件路径
+        File f = new File("E:\\git\\Graduation-Project\\data\\1、yeast\\yeast.txt");//文件路径
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
         Instances instances = ReadInstance(br);
         Collections.shuffle(instances.ins);
