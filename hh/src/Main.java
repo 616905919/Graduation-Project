@@ -138,7 +138,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
 //        File f = new File("D:\\design(2)\\design\\data\\6、haberman\\haberman_ok.txt");
-        File f = new File("E:\\git\\Graduation-Project\\data\\8、credit\\credit.txt");//文件路径
+        File f = new File("E:\\git\\Graduation-Project\\data\\6、haberman\\haberman_ok.txt");//文件路径
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
         Instances instances = ReadInstance(br);
         Collections.shuffle(instances.ins);
@@ -303,8 +303,8 @@ public class Main {
             float yz = InnerProduct(y, z);
             float Now_f = 2 * yz / (InnerProduct(z, z) + InnerProduct(y, y));
             if (timeNow % 2 == 0) {
-                if (timeNow % 400 == 0) {//可以调整 影响最终精度
-                    if (Now_f - fLast < 0.001)//可以调整 影响最终精度
+                if (timeNow % 800 == 0) {//可以调整 影响最终精度
+                    if (Now_f - fLast < 0.0001)//可以调整 影响最终精度
                         break all;
                     fLast = Now_f;
                 }
