@@ -138,15 +138,14 @@ public class Main {
 
     public static void main(String[] args) throws IOException, CloneNotSupportedException {
 //        File f = new File("D:\\design(2)\\design\\data\\6、haberman\\haberman_ok.txt");
-        File f = new File("E:\\git\\Graduation-Project\\data\\6、haberman\\haberman_ok.txt");//文件路径
+        File f = new File("C:\\Users\\jiayao\\git\\Graduation-Project\\data\\8、credit\\credit.txt");//文件路径
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
         Instances instances = ReadInstance(br);
         Collections.shuffle(instances.ins);
         pretreatData(instances);
-        now = System.currentTimeMillis();
 //        Model fnnmo = TrainFnn(instances, 7, 10000);
-        Model model = Train(instances, 7, 100000);
-//        TrainKCross(instances, 6, 100000);
+//        Model model = Train(instances, 7, 100000);
+        TrainKCross(instances, 8, 100000);
         for (int i = 0; i < 1; i++) {
             for (int j = 0; j < 10; j++) {
 //                new TrainModel(instances, j, 10000).start();
@@ -281,6 +280,7 @@ public class Main {
 
     public static Model Train(Instances instances, int i, int IterationTimes) throws CloneNotSupportedException {//基于最小化损失学习的神经网络
         int timeNow = 1;
+        now = System.currentTimeMillis();
         double fLast = 0;
         int maxDonotUp = 3;//可以调整 影响最终精度
         Model model = new Model(instances.ins.get(0).n, i, instances.n);
